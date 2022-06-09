@@ -1,0 +1,100 @@
+.modal-dialog {
+  .modal-content {
+    direction: rtl;
+    border: solid 1px #d5d5d5;
+    background-color: var(--white-color);
+    font-family: var(--font-cairo);
+    .modal-header {
+      display: block;
+      text-align: left;
+      border: none;
+      button {
+        font-size: 11px;
+      }
+    }
+    h5.modal-title {
+      text-align: center;
+      width: 70%;
+      margin: 0px auto;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--secondary-one-color);
+    }
+    .modal-body {
+      width: 70%;
+      margin: 20px auto 0px auto;
+      .input_form {
+        margin-bottom: 16px;
+        position: relative;
+        label {
+          font-size: 14px;
+          color: var(--secondary-two-color);
+        }
+        input {
+          border-radius: 20px;
+          border: solid 1px #d5d5d5;
+          background-color: #fff;
+          height: 36px;
+        }
+        .send {
+          height: 36px;
+          font-size: 16px;
+          color: var(--white-color);
+          bottom: 0px;
+          left: 0px;
+          width: 100px;
+          position: absolute;
+          border-radius: 26px;
+          box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
+          font-weight: 600;
+          background-image: linear-gradient(
+            to bottom,
+            #ffaf60 -55%,
+            #f39171 -12%,
+            #de5b8f
+          );
+        }
+      }
+
+      .forget_password {
+        text-align: left;
+        span {
+          font-size: 12px;
+          color: var(--secondary-two-color);
+        }
+      }
+      .button-login {
+        width: 100%;
+        color: var(--white-color);
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 26px;
+        box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
+        background-image: linear-gradient(
+          to bottom,
+          #ffaf60 -55%,
+          #f39171 -12%,
+          #de5b8f
+        );
+      }
+    }
+
+    .modal-footer {
+      width: 70%;
+      margin: 16px auto 50px auto;
+      font-size: 14px;
+      font-family: var(--font-cairo);
+      text-align: center;
+      display: block;
+      padding: 0px;
+      border: none;
+      color: var(--secondary-two-color);
+      button,
+      a.btn {
+        padding: 0px;
+        color: var(--primary-one-color);
+      }
+    }
+  }
+}

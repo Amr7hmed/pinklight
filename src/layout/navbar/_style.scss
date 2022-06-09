@@ -1,0 +1,144 @@
+/*
+    1- Style Navbar Compunent
+      1- 1- Style Navbar Component To Media Queris Large.
+      1- 2- Style Navbar Component To Media Queris Samll.
+*/
+
+nav.nav {
+  padding-top: 20px;
+  font-family: var(--font-cairo);
+  margin-bottom: 20px;
+}
+.navbar {
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .dropdown-item {
+      color: #212529;
+      &:active {
+        background-color: white;
+      }
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 100px;
+    .dropdown {
+      direction: rtl;
+      .dropdown-toggle {
+        margin-right: 20px;
+        padding: 0px;
+        &:after {
+          display: none;
+        }
+
+        .user {
+          width: 25px;
+          height: 25px;
+          object-fit: unset;
+        }
+      }
+
+      .dropdown-item {
+        text-align: right;
+        direction: rtl;
+      }
+    }
+    a {
+      display: inline-block;
+      img {
+        margin-right: 20px;
+        width: 25px;
+        height: 25px;
+        object-fit: unset;
+      }
+    }
+  }
+  &__advertisement {
+    font-size: 16px;
+    font-weight: 600;
+    a {
+      color: var(--secondary-one-color);
+    }
+  }
+  &__logo {
+    width: 100%;
+    img {
+      height: 69px;
+      width: 83px;
+      object-fit: unset;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--secondary-two-color);
+    direction: rtl;
+    text-align: right;
+    padding-bottom: 8px;
+    input {
+      width: calc(100% - 22px);
+      height: 30px;
+      border: none;
+      background-color: transparent;
+      font-size: 16px;
+      color: var(--secondary-two-color);
+      &:focus-visible {
+        border: none;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+    svg {
+      width: 22px;
+      height: 24px;
+      filter: invert(49%) sepia(11%) saturate(11%) hue-rotate(340deg)
+        brightness(92%) contrast(90%);
+      object-fit: contain;
+    }
+  }
+}
+
+// 1- 1- Style Navbar Component To Media Queris Large.
+@media screen and (max-width: 991px) {
+  .navbar {
+    &__icons {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      margin-right: 0px;
+    }
+    &__advertisement {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: right;
+    }
+  }
+}
+// 1- 2- Style Navbar Component To Media Queris Samll.
+@media screen and (max-width: 576px) {
+  .navbar {
+    &__icons {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      margin-right: 0px;
+      justify-content: center;
+    }
+    &__advertisement {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    &__logo {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    &__input {
+      width: 80%;
+      margin: 0px auto;
+    }
+  }
+}

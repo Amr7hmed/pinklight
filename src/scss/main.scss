@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* 
+    A- Variables Styles .
+    B- Style Genaral Classes .
+ */
+
+ // A- Variables Styles 
+ :root {
+   --white-color: #ffffff;
+   --black-color: #000000;
+   // Primary Colors
+  --primary-one-color: #DD5B8F;
+  --primary-two-color: #FB6F7E;
+  --primary-three-color: #ff8d6d;
+  --primary-four-color: #ffaf60;
+  // Secondary Colors
+  --secondary-one-color: #333333;
+  --secondary-two-color: #767676;
+  --secondary-three-color: #c0c0c0;
+  --secondary-four-color: #D9D9D9;
+  // Success Colors
+  --success-one-color: #66ddb3;
+  --success-two-color: #00c781;
+  --success-three-color: #00b374;
+  // Warning Colors
+  --warning-one-color: #ffd688;
+  --warning-two-color: #ffbb38;
+  --warning-three-color: #E6A832;
+  // Danger Colors
+  --danger-one-color: #ff8c8c;
+  --danger-two-color: #ff4040;
+  --danger-three-color: #CC3333;
+  // Font Family
+  --font-cairo: 'Cairo', sans-serif;
+  // Font Size
+  --font-heading-size : 40px;
+  --font-title-size:24px;
+  --font-paragraphone-size:24px;
+  --font-paragraphtwo-size:16px;
+}
+
+// Buttons Styles
+
+ %button-active{
+  padding: 1px 92px;
+  border-radius: 34px;
+  box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
+  background-image: linear-gradient(to bottom, #ffaf60 -55%, #f39171 -12%, #de5b8f);
+ }
+
+ %button-disabled{
+  padding: 1px 92px;
+  opacity: 0.51;
+  border-radius: 34px;
+  box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
+  background-image: linear-gradient(to bottom, #ffaf60 -55%, #f39171 -12%, #de5b8f);
+ }
+
+
+ // B- Style Genaral Classes .
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body{
+  user-select: none;
+  color: var(--black-color);
+  
+}
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+  }
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+.clearfix {
+  clear: both;
+}
+.row {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.btn{
+  &:focus{
+    box-shadow: none;
+  }}
+  .form-control{
+    &:focus {
+      box-shadow: none
+    }
+  }
+@import "../layout/navbar/_style.scss";
+@import "../components/home/_style.scss";
+@import "../layout/footer/_style.scss";
+@import "../layout/modals/_style.scss";
