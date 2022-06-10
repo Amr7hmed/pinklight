@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pinklight/static/css/main.acc1d607.css",
-    "main.js": "/pinklight/static/js/main.ce4a174c.js",
+    "main.js": "/pinklight/static/js/main.a119f6f9.js",
     "static/js/787.a2ad9c27.chunk.js": "/pinklight/static/js/787.a2ad9c27.chunk.js",
     "static/media/offers.png": "/pinklight/static/media/offers.3edf3428de3cef723d4f.png",
     "static/media/slider.png": "/pinklight/static/media/slider.dcd06cb537fa01daac49.png",
@@ -28,11 +28,11 @@
     "index.html": "/pinklight/index.html",
     "static/media/facebook-f-brands.svg": "/pinklight/static/media/facebook-f-brands.8adca75361b744d17bbeb17b9c804d9d.svg",
     "main.acc1d607.css.map": "/pinklight/static/css/main.acc1d607.css.map",
-    "main.ce4a174c.js.map": "/pinklight/static/js/main.ce4a174c.js.map",
+    "main.a119f6f9.js.map": "/pinklight/static/js/main.a119f6f9.js.map",
     "787.a2ad9c27.chunk.js.map": "/pinklight/static/js/787.a2ad9c27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.acc1d607.css",
-    "static/js/main.ce4a174c.js"
+    "static/js/main.a119f6f9.js"
   ]
 }
