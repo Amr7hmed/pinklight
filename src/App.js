@@ -9,7 +9,7 @@ function App() {
         <BrowserRouter>
         <Navbar/>
           <Routes>
-            <Route path="/" element={<Home />} exact/>
+            <Route path="/pinklight" element={<Home />} exact/>
           </Routes>
           <Footer/>
         </BrowserRouter>
