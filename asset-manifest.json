@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/pinklight/static/css/main.acc1d607.css",
+    "main.js": "/pinklight/static/js/main.ce4a174c.js",
+    "static/js/787.a2ad9c27.chunk.js": "/pinklight/static/js/787.a2ad9c27.chunk.js",
+    "static/media/offers.png": "/pinklight/static/media/offers.3edf3428de3cef723d4f.png",
+    "static/media/slider.png": "/pinklight/static/media/slider.dcd06cb537fa01daac49.png",
+    "static/media/img-4.png": "/pinklight/static/media/img-4.9874b485592a2f034fe6.png",
+    "static/media/img-2.png": "/pinklight/static/media/img-2.64c34bda547338c6e42a.png",
+    "static/media/img-1.png": "/pinklight/static/media/img-1.07fad1b6d98b80a27612.png",
+    "static/media/img-3.png": "/pinklight/static/media/img-3.235b1ea007904fcd19b8.png",
+    "static/media/img-6.png": "/pinklight/static/media/img-6.87d7550a7adf4829adc8.png",
+    "static/media/img-5.png": "/pinklight/static/media/img-5.0ec961adc6028fd545cf.png",
+    "static/media/logo.png": "/pinklight/static/media/logo.77e38598887c3ef476d1.png",
+    "static/media/shipping.svg": "/pinklight/static/media/shipping.7517c6537e358982b3b3fb6d25caff99.svg",
+    "static/media/user.svg": "/pinklight/static/media/user.86a254526f927d39c85e29f2276467e4.svg",
+    "static/media/accessories.svg": "/pinklight/static/media/accessories.ef2c95d2d562ddb122b96b325c24fbe9.svg",
+    "static/media/dress.svg": "/pinklight/static/media/dress.7e946462876a3d96d4a795e4dc0b9d70.svg",
+    "static/media/cash.svg": "/pinklight/static/media/cash.f9fcfc1b66ff4476ff23f8b123dc5f5b.svg",
+    "static/media/money.svg": "/pinklight/static/media/money.e5e6a2259e3358d67bea34edc7834db9.svg",
+    "static/media/bag.svg": "/pinklight/static/media/bag.5be620d4aa5cb4ddf6bee4d774f474f0.svg",
+    "static/media/categories.svg": "/pinklight/static/media/categories.9d31802b6ecaad20f971.svg",
+    "static/media/send.svg": "/pinklight/static/media/send.247fbcc5238b2aba904b.svg",
+    "static/media/shopping.svg": "/pinklight/static/media/shopping.0d5cb7497ca41e94187d9ab959282459.svg",
+    "static/media/instagram-brands.svg": "/pinklight/static/media/instagram-brands.813fd06b51b26e101fbbdde32e64af13.svg",
+    "static/media/twitter-brands.svg": "/pinklight/static/media/twitter-brands.7b0966c673ac146ae16dfeaa6ecc2eb1.svg",
+    "static/media/heart.svg": "/pinklight/static/media/heart.6d06655ea6c752bd88512e51340ec81c.svg",
+    "index.html": "/pinklight/index.html",
+    "static/media/facebook-f-brands.svg": "/pinklight/static/media/facebook-f-brands.8adca75361b744d17bbeb17b9c804d9d.svg",
+    "main.acc1d607.css.map": "/pinklight/static/css/main.acc1d607.css.map",
+    "main.ce4a174c.js.map": "/pinklight/static/js/main.ce4a174c.js.map",
+    "787.a2ad9c27.chunk.js.map": "/pinklight/static/js/787.a2ad9c27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acc1d607.css",
+    "static/js/main.ce4a174c.js"
+  ]
+}

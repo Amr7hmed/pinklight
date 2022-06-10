@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117.725" height="117.725" viewBox="0 0 117.725 117.725">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        filter: url(#Path_6266);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" y1="-0.549" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffaf60"/>
+      <stop offset="0.278" stop-color="#f39171"/>
+      <stop offset="1" stop-color="#de5b8f"/>
+    </linearGradient>
+    <filter id="Path_6266" x="0" y="0" width="117.725" height="117.725" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feFlood flood-opacity="0.09"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_90" data-name="Group 90" transform="translate(-3284.359 1919.567) rotate(-101)">
+    <g class="cls-3" transform="matrix(-0.19, 0.98, -0.98, -0.19, 1257.61, 3590.29)">
+      <path id="Path_6266-2" data-name="Path 6266" class="cls-1" d="M19.5,0A19.5,19.5,0,1,1,0,19.5,19.5,19.5,0,0,1,19.5,0Z" transform="translate(38.44 78.73) rotate(-101)"/>
+    </g>
+    <path id="Icon_ionic-ios-send" data-name="Icon ionic-ios-send" class="cls-2" d="M22.392,4.544l-17.661,7.7a.4.4,0,0,0,.014.736l4.777,2.7a.77.77,0,0,0,.88-.087l9.42-8.121c.063-.053.212-.154.269-.1s-.034.207-.087.269l-8.15,9.179a.768.768,0,0,0-.077.919L14.9,22.748a.406.406,0,0,0,.731-.01l7.3-17.661A.4.4,0,0,0,22.392,4.544Z" transform="translate(1178.761 3618.76)"/>
+  </g>
+</svg>
