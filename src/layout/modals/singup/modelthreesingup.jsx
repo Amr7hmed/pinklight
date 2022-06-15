@@ -26,7 +26,7 @@ function ModelThreeSingup() {
           <div className="modal-body">
             <form>
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                 اسم المستخدم
                 </label>
                 <input type="text" className="form-control" id="recipient-name" />
@@ -35,7 +35,7 @@ function ModelThreeSingup() {
 
 
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                 البريد الالكترونى
                 </label>
                 <input type="email" className="form-control" id="recipient-name" />
@@ -43,14 +43,14 @@ function ModelThreeSingup() {
 
 
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                 ادخل كلمة المرور الجديده
                 </label>
                 <input type="password" className="form-control" id="recipient-name" />
               </div>
 
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                 إعد ادخال كلمة المرور الجديده
                 </label>
                 <input type="password" className="form-control" id="recipient-name" />

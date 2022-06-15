@@ -2,6 +2,10 @@ import { BrowserRouter,Routes,Route }from 'react-router-dom';
 import Home from "./pages/Home/index.jsx";
 import Navbar from "./layout/navbar/index.jsx";
 import Footer from './layout/footer/index.jsx';
+import Favorite from './pages/Favorite/index.jsx';
+import Proudect from './pages/Proudect/index.jsx';
+import Cart from './pages/Cart/index.jsx';
+import Confirm from './pages/Checkout/Confirm.jsx';
 function App() {
   return (
     <>
@@ -10,6 +14,10 @@ function App() {
         <Navbar/>
           <Routes>
             <Route path="/pinklight" element={<Home />} exact/>
+            <Route path="/favorite" element={<Favorite/>} exact/>
+            <Route path="/proudect/:id" element={<Proudect/>} exact/>
+            <Route path="/cart" element={<Cart/>} exact/>
+            <Route path="/confirm" element={<Confirm/>} exact/>
           </Routes>
           <Footer/>
         </BrowserRouter>

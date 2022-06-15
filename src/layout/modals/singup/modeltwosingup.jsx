@@ -20,7 +20,7 @@ function ModeltwoSingup() {
             <form>
 
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                   الرمز
                 </label>
                 <input

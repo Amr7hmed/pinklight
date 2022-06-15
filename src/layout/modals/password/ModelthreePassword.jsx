@@ -20,14 +20,14 @@ function ModelthreePassword() {
           <div className="modal-body">
             <form>
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                 ادخل كلمة المرور الجديده
                 </label>
                 <input type="password" className="form-control" id="recipient-name" />
               </div>
 
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                 إعد ادخال كلمة المرور الجديده
                 </label>
                 <input type="password" className="form-control" id="recipient-name" />

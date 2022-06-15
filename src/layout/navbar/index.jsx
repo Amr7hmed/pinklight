@@ -15,10 +15,10 @@ function Navbar() {
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__icons">
                 <Iconlogin />
-                <NavLink to="/">
+                <NavLink to="/favorite">
                   <img src={Heart} alt="heart" />
                 </NavLink>
-                <NavLink to="/">
+                <NavLink to="/cart">
                   <img src={Shopping} alt="shopping" />
                 </NavLink>
               </div>

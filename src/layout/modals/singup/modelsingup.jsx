@@ -27,7 +27,7 @@ function ModelSingup() {
           <div className="modal-body">
             <form>
               <div className="input_form">
-                <label for="recipient-name" className="col-form-label">
+                <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف/ البريد الإلكترونى
                 </label>
                 <input

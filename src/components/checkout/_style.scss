@@ -1,0 +1,82 @@
+.checkoutpage {
+  font-family: var(--font-cairo);
+  &__demand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      span {
+        &:last-of-type {
+          font-size: 16px;
+          font-weight: bold;
+          color: var(--secondary-one-color);
+        }
+      }
+    }
+  }
+  &__form {
+    width: 70%;
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--secondary-one-color);
+      margin-bottom: 45px;
+    }
+    input {
+      border-radius: 10px;
+      border: solid 1px #c0c0c0;
+      height: 45px;
+    }
+    .buttonsform {
+      width: 100%;
+      text-align: center;
+      .btn {
+        width: 168px;
+        height: 51px;
+        border-radius: 25.5px;
+        box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
+        background-image: linear-gradient(
+          to bottom,
+          #ffaf60 -55%,
+          #f39171 -12%,
+          #de5b8f
+        );
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--white-color);
+        line-height: 33px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+// 1- 1- Style Navbar Component To Media Queris Large.
+@media screen and (max-width: 991px) {
+  .checkoutpage {
+    &__links{    
+    img {
+      margin: 0px 10px;
+    }
+    a {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    }
+    &__content {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__form {
+      width: 100%;
+    margin-bottom: 50px;}
+    &__demand {
+      width: 100%;
+      padding: 30px;
+    }
+  }
+  
+}

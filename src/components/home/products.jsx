@@ -5,9 +5,9 @@ import Imagethree from "../../images/products/img-3.png";
 import Imagefour from "../../images/products/img-4.png";
 import Imagefive from "../../images/products/img-5.png";
 import Imagesix from "../../images/products/img-6.png";
+import CardProudect from "./cardproudect.jsx";
 import { NavLink } from "react-router-dom";
-
-function Products() {
+function SectionProducts() {
   return (
     <>
       <div className="container">
@@ -18,74 +18,22 @@ function Products() {
 
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-4">
-              <NavLink to="/" className="card_item">
-                <div className="img">
-                  <img src={Imageone} alt="Proudect" />
-                </div>
-
-                <div className="content">
-                  <p>حقيبه مربعه مبطن قلاب</p>
-                  <span>SR 76.00</span>
-                </div>
-              </NavLink>
+              <CardProudect Image={Imageone} Title={"حقيبه مربعه مبطن قلاب"} Price={"76.00"} Id={"1"}/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
-              <NavLink to="/" className="card_item">
-                <div className="img">
-                  <img src={Imagetwo} alt="Proudect" />
-                </div>
-
-                <div className="content">
-                  <p>فستان برباط أمامى باكمام فانوس بعنق..</p>
-                  <span>SR 76.00</span>
-                </div>
-              </NavLink>
+              <CardProudect Image={Imagetwo} Title={"فستان برباط أمامى باكمام فانوس بعنق.."} Price={"76.00"} Id={"2"}/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
-              <NavLink to="/" className="card_item">
-                <div className="img">
-                  <img src={Imagethree} alt="Proudect" />
-                </div>
-
-                <div className="content">
-                  <p>حقيبه نسائيه مربعه مبطن</p>
-                  <span>SR 76.00</span>
-                </div>
-              </NavLink>
+              <CardProudect Image={Imagethree} Title={"حقيبه نسائيه مربعه مبطن"} Price={"76.00"} Id={"3"}/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
-              <NavLink to="/" className="card_item">
-                <div className="img">
-                  <img src={Imagefour} alt="Proudect" />
-                </div>
-
-                <div className="content">
-                  <p>فستان 2 في 1 بحزام غير متماثل باكمام ...</p>
-                  <span>SR 76.00</span>
-                </div>
-              </NavLink>
+              <CardProudect Image={Imagefour} Title={"فستان 2 في 1 بحزام غير متماثل باكمام ..."} Price={"76.00"}  Id={"4"}/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
-              <NavLink to="/" className="card_item">
-                <div className="img">
-                  <img src={Imagefive} alt="Proudect" />
-                </div>
-                <div className="content">
-                  <p>حزام بمشبك معدنى ثلاث قطع</p>
-                  <span>SR 76.00</span>
-                </div>
-              </NavLink>
+              <CardProudect Image={Imagefive} Title={"حزام بمشبك معدنى ثلاث قطع"} Price={"76.00"} Id={"5"}/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
-              <NavLink to="/" className="card_item">
-                <div className="img">
-                  <img src={Imagesix} alt="Proudect" />
-                </div>
-                <div className="content">
-                  <p>عصابة شعر مع لؤلؤ اصطناعى مع ...</p>
-                  <span>SR 76.00</span>
-                </div>
-              </NavLink>
+              <CardProudect Image={Imagesix} Title={"عصابة شعر مع لؤلؤ اصطناعى مع ..."} Price={"76.00"} Id={"6"}/>
             </div>
 
             <div className="buttons">
@@ -98,4 +46,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default SectionProducts;

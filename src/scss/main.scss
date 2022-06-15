@@ -81,7 +81,6 @@ ul {
 }
 img {
   max-width: 100%;
-  object-fit: contain;
 }
 .clearfix {
   clear: both;
@@ -99,7 +98,15 @@ img {
       box-shadow: none
     }
   }
+
+  .mb_20{
+    margin-bottom: 20px;
+  }
 @import "../layout/navbar/_style.scss";
 @import "../components/home/_style.scss";
+@import "../components/favorite/_style.scss";
+@import "../components/proudect/_style.scss";
+@import "../components/cart/_style.scss";
+@import "../components/checkout/_style.scss";
 @import "../layout/footer/_style.scss";
 @import "../layout/modals/_style.scss";
