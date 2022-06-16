@@ -6,6 +6,8 @@ import Favorite from './pages/Favorite/index.jsx';
 import Proudect from './pages/Proudect/index.jsx';
 import Cart from './pages/Cart/index.jsx';
 import Confirm from './pages/Checkout/Confirm.jsx';
+import Payment from './pages/Checkout/Payment.jsx';
+import Orderdone from './pages/Checkout/Orderdone.jsx';
 function App() {
   return (
     <>
@@ -18,6 +20,11 @@ function App() {
             <Route path="/proudect/:id" element={<Proudect/>} exact/>
             <Route path="/cart" element={<Cart/>} exact/>
             <Route path="/confirm" element={<Confirm/>} exact/>
+            <Route path="/payment" element={<Payment/>} exact/>
+            <Route path="/orderdone" element={<Orderdone/>} exact/>
+            
+
+            
           </Routes>
           <Footer/>
         </BrowserRouter>

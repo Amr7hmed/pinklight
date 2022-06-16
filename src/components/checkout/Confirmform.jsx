@@ -68,7 +68,7 @@ function Confirmform() {
           </div>
 
           <div className="buttonsform">
-            <NavLink to={`/`} className="btn">
+            <NavLink to={`/payment`} className="btn">
               حفظ
             </NavLink>
           </div>

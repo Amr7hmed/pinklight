@@ -1,7 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Demand(props) {
-  const { Price, Shipping } = props;
+  const { Price, Shipping ,classbutton ,Active } = props;
   let Totle = Price + Shipping;
   return (
     <section className="checkoutpage__demand">
@@ -26,6 +27,13 @@ function Demand(props) {
         <span> المبلغ بالكامل </span>
 
         <span>SR {Totle.toFixed(2)}</span>
+      </div>
+
+
+      <div className={"buttons " + classbutton}>
+        <NavLink to={`/orderdone`} className={"btn "+ Active}>
+        استمر
+        </NavLink>
       </div>
 
     </section>

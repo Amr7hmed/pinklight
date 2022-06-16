@@ -1,12 +1,12 @@
 import React from "react";
-import Confirmform from "../../components/checkout/Confirmform";
-import Demand from "../../components/checkout/Demand";
 import { NavLink } from "react-router-dom";
+import Demand from "../../components/checkout/Demand";
+import Shippingsection from "../../components/checkout/Shipping";
 import Iconleft from "../../images/icon/chevron-left-solid.svg";
-function Confirm() {
+
+function Orderdone() {
   const Price = 76,
     Shipping = 10;
-
   return (
     <section className="checkoutpage">
       <div className="container">
@@ -23,20 +23,24 @@ function Confirm() {
 
           <img src={Iconleft} alt="" />
 
-          <NavLink to={`/payment`}>دفع</NavLink>
+          <NavLink to={`/payment`} className="active">
+            دفع
+          </NavLink>
 
           <img src={Iconleft} alt="" />
 
-          <NavLink to={`/`}>تم الطلب</NavLink>
+          <NavLink to={`/`} className="active">
+            تم الطلب
+          </NavLink>
         </section>
 
         <section className="checkoutpage__content">
-          <Confirmform />
-          <Demand Price={Price} Shipping={Shipping} classbutton={"hide"}/>
+          <Shippingsection />
+          <Demand Price={Price} Shipping={Shipping} classbutton={"hide"} />
         </section>
       </div>
     </section>
   );
 }
 
-export default Confirm;
+export default Orderdone;
