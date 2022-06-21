@@ -8,6 +8,8 @@ import Cart from './pages/Cart/index.jsx';
 import Confirm from './pages/Checkout/Confirm.jsx';
 import Payment from './pages/Checkout/Payment.jsx';
 import Orderdone from './pages/Checkout/Orderdone.jsx';
+import Posts from './pages/Post/index.jsx';
+
 function App() {
   return (
     <>
@@ -22,6 +24,7 @@ function App() {
             <Route path="/confirm" element={<Confirm/>} exact/>
             <Route path="/payment" element={<Payment/>} exact/>
             <Route path="/orderdone" element={<Orderdone/>} exact/>
+            <Route path="/post" element={<Posts/>} exact/>
             
 
             

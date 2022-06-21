@@ -98,7 +98,12 @@ img {
       box-shadow: none
     }
   }
-
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
   .mb_20{
     margin-bottom: 20px;
   }
@@ -110,3 +115,4 @@ img {
 @import "../components/checkout/_style.scss";
 @import "../layout/footer/_style.scss";
 @import "../layout/modals/_style.scss";
+@import "../components/posts/_style.scss";

@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "../../images/logo/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Navpost from "../../components/posts/navpost";
 
 function Navbar() {
   return (
@@ -25,7 +26,7 @@ function Navbar() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__advertisement">
-                <NavLink to="/">أنشر إعلانك</NavLink>
+                <Navpost/>
               </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
