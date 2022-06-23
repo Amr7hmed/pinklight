@@ -7,6 +7,7 @@ import Logo from "../../images/logo/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Navpost from "../../components/posts/navpost";
+import Iconprofile from "./Iconprofile";
 
 function Navbar() {
   return (
@@ -15,7 +16,7 @@ function Navbar() {
         <div className="navbar__item row">
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__icons">
-                <Iconlogin />
+                <Iconprofile/>
                 <NavLink to="/favorite">
                   <img src={Heart} alt="heart" />
                 </NavLink>

@@ -123,9 +123,9 @@
           color: var(--white-color);
         }
 
-        &:hover {
-          background-color: #fb6f7e;
-        }
+      }
+      .item.show{
+        background-color: #fb6f7e;
       }
     }
   }
@@ -133,7 +133,9 @@
   &__form {
     width: 80%;
     margin: 65px auto 0px auto;
+    font-family: var(--font-cairo);
     .selectbox {
+      margin-bottom: 75px;
       label {
         font-size: 20px;
         font-weight: 600;
@@ -146,18 +148,373 @@
         background-color: #fff;
       }
     }
-
-    .btn{
+    .post__details {
+      .header {
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+        }
+        margin-bottom: 60px;
+      }
+      .form-group {
+        margin-bottom: 48px;
+        label {
+          font-size: 20px;
+          font-weight: 600;
+          color: #767676;
+          margin-bottom: 10px;
+        }
+        input.form-control {
+          border-radius: 10px;
+          border: solid 1px #c0c0c0;
+          background-color: #fff;
+          font-size: 14px;
+          color: #c0c0c0;
+          padding: 15px 32px;
+          font-size: 14px;
+          color: #c0c0c0;
+        }
+        .price {
+          position: relative;
+          width: 100%;
+          input.form-control {
+            width: 100%;
+            height: 100%;
+            color: #c0c0c0;
+          }
+          span {
+            position: absolute;
+            left: 20px;
+            bottom: 0px;
+            width: 35px;
+            height: 100%;
+            text-align: center;
+            line-height: 45px;
+          }
+          .input-redio-price {
+            margin-top: 16px;
+            margin-bottom: 25px;
+            label {
+              font-size: 14px;
+              color: #c0c0c0;
+              margin-left: 100px;
+              input {
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+        .size {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          input {
+            margin-left: 20px;
+          }
+          span {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 110px;
+            height: 48px;
+            padding: 8px 22px 8px 23px;
+            border-radius: 24px;
+            border: solid 1px #c0c0c0;
+            input {
+              margin-top: 0px;
+              width: 32px;
+              height: 32px;
+              box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.17);
+              border: solid 4px #fff;
+            }
+            label {
+              color: #767676;
+              font-weight: 400;
+              font-size: 14px;
+              margin-bottom: 0px;
+            }
+          }
+        }
+      }
+      .form-check-inline {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        label {
+          font-size: 14px;
+          color: #c0c0c0;
+          input {
+            float: none;
+            margin-left: 15px;
+          }
+        }
+      }
+      textarea {
+        height: 178px;
+        margin: 8px 0 0;
+        padding: 15px 32px;
+        border-radius: 15px;
+        border: solid 1px #c0c0c0;
+        background-color: #fff;
+        font-size: 14px;
+        color: #c0c0c0;
+      }
+      .form-proudect {
+        h6 {
+          margin: 70px 0px 50px 0px;
+          font-size: 25px;
+          font-weight: bold;
+          color: #707070;
+        }
+      }
+      .form-proudect_imgs {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 60px;
+        border-bottom: 1px solid #eee;
+        .righet {
+          height: 589px;
+          border: 1px #c0c0c0;
+          border-style: dashed;
+          width: calc(100% - 190px);
+          border-radius: 15px;
+          position: relative;
+          .righet-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            width: 228px;
+            height: 185px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            img {
+              width: 109.9px;
+              height: 85.7px;
+            }
+            span {
+              font-size: 17px;
+              font-weight: 600;
+              color: #c0c0c0;
+            }
+            input {
+              width: 100%;
+              position: absolute;
+              height: 100%;
+              top: 0%;
+              left: 0%;
+              opacity: 0;
+            }
+          }
+        }
+        .left {
+          width: 150px;
+          margin-left: 40px;
+          height: 589px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .item {
+            width: 100%;
+            height: 80px;
+            position: relative;
+            border: 1px #c0c0c0;
+            border-style: dashed;
+            border-radius: 10px;
+            span {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              z-index: 1;
+              transform: translate(-50%, -50%);
+              width: 32.6px;
+              height: 25.4px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+              input {
+                width: 100%;
+                position: absolute;
+                height: 100%;
+                top: 0%;
+                left: 0%;
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .btn {
       font-size: 19px;
       font-weight: 600;
       color: #fff;
       width: 200px;
       height: 50px;
-      display:block;
+      display: block;
       margin: 100px auto;
       border-radius: 25px;
       box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
-      background-image: linear-gradient(to bottom, #ffaf60 -55%, #f39171 -12%, #de5b8f);
+      background-image: linear-gradient(
+        to bottom,
+        #ffaf60 -55%,
+        #f39171 -12%,
+        #de5b8f
+      );
+    }
+    .salesdetails {
+      margin-top: 65px;
+      font-family: var(--font-cairo);
+      h6 {
+        font-size: 25px;
+        font-weight: bold;
+        color: #767676;
+        margin-bottom: 36px;
+      }
+      .form-group-username {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          width: 65px;
+          height: 65px;
+          margin-left: 20px;
+        }
+        input {
+          width: calc(100% - 85px);
+          border: solid 1px #c0c0c0;
+          background-color: #fff;
+        }
+      }
+      .form-group {
+        margin-bottom: 35px;
+        input{
+          height: 55px;
+          padding: 15px 32px;
+          border-radius: 15px;
+          font-size: 14px;
+          font-weight: normal;
+          color: #c0c0c0;
+        }
+      }
+    }
+  }
+}
+
+// 1- 1- Style Navbar Component To Media Queris Large.
+@media screen and (max-width: 991px) {
+  .post {
+    &__categories {
+      width: 100%;
+      h5 {
+        margin: 20px 0px 30px 0px;
+      }
+      &__items {
+        flex-direction: column;
+        align-items: center;
+        .item {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &__form {
+      width: 100%;
+      margin: 40px auto 0px auto;
+      .selectbox {
+        margin-bottom: 45px;
+      }
+      .post__details {
+        .header {
+          margin-bottom: 40px;
+        }
+        .form-group {
+          .size {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            span{
+              margin-bottom: 20px;
+            }
+          }
+        }
+        .form-proudect_imgs {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 60px;
+          border-bottom: 1px solid #eee;
+          .righet {
+           width: 100%;
+          }
+          .left {
+            width: 100%;
+            margin-left: 0px;
+            margin-bottom: 40px;
+            height: auto;
+            align-items: center;
+            .item {
+              width: 90%;
+              height: 100px;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      .salesdetails {
+        .form-group-username {
+          img {
+            width: 65px;
+            height: 65px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .btn {
+        margin: 50px auto;
+      }
+    }
+  }
+}
+
+// 1- 2- Style Navbar Component To Media Queris Samll.
+@media screen and (max-width: 576px) {
+  .modelpost {
+    &__contener {
+      width: 90%;
+      height: auto;
+      padding: 15px;
+      p {
+        margin: 10px 0;
+      }
+    }
+    &__checkbox {
+      margin: 5px 0px 15px 0px;
+    }
+    &__buttons {
+      flex-direction: column;
+      align-items: center;
+      .button-right {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .post {
+    h1,h2,h3,h4,h5,h6{
+      text-align: center;
     }
   }
 }

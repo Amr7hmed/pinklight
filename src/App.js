@@ -9,6 +9,11 @@ import Confirm from './pages/Checkout/Confirm.jsx';
 import Payment from './pages/Checkout/Payment.jsx';
 import Orderdone from './pages/Checkout/Orderdone.jsx';
 import Posts from './pages/Post/index.jsx';
+import Porfile from './pages/Porfile/index.jsx';
+import Myorders from './pages/Orders/index.jsx';
+import Mynotifications from './pages/Notifications/index.jsx';
+import MyAds from './pages/Ads/index.jsx';
+import Massages from './pages/Massages/index.jsx';
 
 function App() {
   return (
@@ -25,8 +30,13 @@ function App() {
             <Route path="/payment" element={<Payment/>} exact/>
             <Route path="/orderdone" element={<Orderdone/>} exact/>
             <Route path="/post" element={<Posts/>} exact/>
+            <Route path="/myporfile" element={<Porfile/>} exact/>
+            <Route path="/myorders" element={<Myorders/>} exact/>
+            <Route path="/mynotifications" element={<Mynotifications/>} exact/>
+            <Route path="/myads" element={<MyAds/>} exact/>
+            <Route path="/mymassages" element={<Massages/>} exact/>
             
-
+            
             
           </Routes>
           <Footer/>

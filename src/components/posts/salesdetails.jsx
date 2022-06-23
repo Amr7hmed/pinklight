@@ -7,7 +7,7 @@ function SalesDetails() {
 
       <div>
 
-        <div class="form-group">
+        <div class="form-group form-group-username">
           <img src={Manimg} alt="" />
           <input type="text" class="form-control" placeholder="اسم المستخدم" />
         </div>

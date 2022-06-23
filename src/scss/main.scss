@@ -63,6 +63,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-cairo);
 }
 a {
   text-decoration: none;
@@ -107,6 +108,9 @@ img {
   .mb_20{
     margin-bottom: 20px;
   }
+  .errorfiled{
+    color: red
+  }
 @import "../layout/navbar/_style.scss";
 @import "../components/home/_style.scss";
 @import "../components/favorite/_style.scss";
@@ -116,3 +120,4 @@ img {
 @import "../layout/footer/_style.scss";
 @import "../layout/modals/_style.scss";
 @import "../components/posts/_style.scss";
+@import "../components/porfile/_style.scss";

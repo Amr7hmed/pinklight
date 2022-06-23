@@ -102,6 +102,32 @@ nav.nav {
       object-fit: contain;
     }
   }
+  &__iconprofile {
+    width: 239px;
+    margin: 16px 0 0;
+    padding: 28px 27.5px 28px 28.5px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 24px 0 rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+    text-align: right;
+    .dropdown-item {
+      display: inline-block;
+      width: 100%;
+      a {
+        width: 100%;
+        display: inline-block;
+        padding: 8px 0px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--secondary-one-color);
+        border-bottom: 1px solid #d5d5d5;
+      }
+      .btn{
+        padding: 8px 0px;
+
+      }
+    }
+  }
 }
 
 // 1- 1- Style Navbar Component To Media Queris Large.
@@ -126,7 +152,7 @@ nav.nav {
       margin-top: 20px;
       margin-bottom: 40px;
       margin-right: 0px;
-      justify-content: center;
+      justify-content: space-around;
     }
     &__advertisement {
       margin-bottom: 40px;
