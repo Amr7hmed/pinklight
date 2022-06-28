@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pinklight/static/css/main.8fa1b696.css",
-    "main.js": "/pinklight/static/js/main.ff2a1fad.js",
+    "main.css": "/pinklight/static/css/main.6fa9065e.css",
+    "main.js": "/pinklight/static/js/main.33744921.js",
     "static/js/787.a2ad9c27.chunk.js": "/pinklight/static/js/787.a2ad9c27.chunk.js",
     "static/media/img-1.webp": "/pinklight/static/media/img-1.608e6133e0584e857610.webp",
     "static/media/offers.png": "/pinklight/static/media/offers.3edf3428de3cef723d4f.png",
@@ -46,12 +46,12 @@
     "static/media/cart.svg": "/pinklight/static/media/cart.a87ab553952804e8598ab0ed5b8ee508.svg",
     "static/media/chevron-left-solid.svg": "/pinklight/static/media/chevron-left-solid.7cbb7b474d7a0a1474cbb1a8d040e167.svg",
     "static/media/facebook-f-brands.svg": "/pinklight/static/media/facebook-f-brands.8adca75361b744d17bbeb17b9c804d9d.svg",
-    "main.8fa1b696.css.map": "/pinklight/static/css/main.8fa1b696.css.map",
-    "main.ff2a1fad.js.map": "/pinklight/static/js/main.ff2a1fad.js.map",
+    "main.6fa9065e.css.map": "/pinklight/static/css/main.6fa9065e.css.map",
+    "main.33744921.js.map": "/pinklight/static/js/main.33744921.js.map",
     "787.a2ad9c27.chunk.js.map": "/pinklight/static/js/787.a2ad9c27.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fa1b696.css",
-    "static/js/main.ff2a1fad.js"
+    "static/css/main.6fa9065e.css",
+    "static/js/main.33744921.js"
   ]
 }
