@@ -4,6 +4,7 @@
 */
 
 .home {
+
   //  1- Style Slider Component
   &__slider {
     display: flex;
@@ -11,21 +12,25 @@
     font-family: var(--font-cairo);
     position: relative;
     direction: rtl;
+
     .img {
       position: absolute;
       left: 0px;
       bottom: 0px;
     }
+
     img {
       width: 630px;
       height: 618px;
       object-fit: unset;
     }
+
     .content {
       padding: 1px;
       height: 618px;
       margin-right: 60px;
       font-family: var(--font-cairo);
+
       h3 {
         margin-top: 130px;
         font-size: var(--font-heading-size);
@@ -33,6 +38,7 @@
         text-align: right;
         color: var(--secondary-one-color);
       }
+
       p {
         margin-top: 16px;
         text-align: right;
@@ -47,12 +53,10 @@
         padding: 7px 34px 7px 34px;
         border-radius: 25.5px;
         box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
-        background-image: linear-gradient(
-          to bottom,
-          #ffaf60 -55%,
-          #f39171 -12%,
-          #de5b8f
-        );
+        background-image: linear-gradient(to bottom,
+            #ffaf60 -55%,
+            #f39171 -12%,
+            #de5b8f);
         color: var(--white-color);
       }
     }
@@ -61,6 +65,7 @@
   &__categories {
     direction: rtl;
     font-family: var(--font-cairo);
+
     .header {
       position: relative;
       width: 265px;
@@ -68,6 +73,7 @@
       margin-bottom: -35px;
       background-image: url("../../images/layout/categories.svg");
       background-repeat: no-repeat;
+
       span {
         position: absolute;
         top: 5px;
@@ -87,6 +93,7 @@
       margin-bottom: 50px;
       border-radius: 35px;
       align-items: center;
+
       .item {
         height: 100%;
         width: 250px;
@@ -98,8 +105,14 @@
         cursor: pointer;
         transition: all 3s;
         background-color: #2c2e43;
+
         &:hover {
           background-color: #fb6f7e;
+        }
+
+        .img-ouer {
+          width: 60px;
+          height: 60px;
         }
 
         span {
@@ -118,30 +131,32 @@
     margin-top: 120px;
     direction: rtl;
     font-family: var(--font-cairo);
+
     .header {
       margin-bottom: 50px;
+
       h5 {
         color: var(--secondary-one-color);
         font-size: 30px;
         font-weight: bold;
       }
     }
+
     .buttons {
       text-align: center;
       margin: 40px 0px;
       font-family: var(--font-cairo);
+
       .btn {
         width: 168px;
         height: 51px;
         padding: 7px 44px;
         border-radius: 25.5px;
         box-shadow: 5px 3px 24px 0 rgba(0, 0, 0, 0.09);
-        background-image: linear-gradient(
-          to bottom,
-          #ffaf60 -55%,
-          #f39171 -12%,
-          #de5b8f
-        );
+        background-image: linear-gradient(to bottom,
+            #ffaf60 -55%,
+            #f39171 -12%,
+            #de5b8f);
         font-size: 20px;
         font-weight: 600;
         color: var(--white-color);
@@ -155,10 +170,12 @@
     margin-bottom: 100px;
     direction: rtl;
     display: inline-block;
+
     .img {
       width: 285px;
       height: 376px;
       margin-bottom: 8px;
+
       img {
         width: 285px;
         height: 100%;
@@ -169,11 +186,13 @@
     .content {
       width: 285px;
       font-size: 17px;
+
       p {
         margin: 8px 0px;
         text-align: right;
         color: var(--secondary-two-color);
       }
+
       span {
         color: var(--secondary-one-color);
         margin: 8px 0px;
@@ -182,6 +201,7 @@
       }
     }
   }
+
   &__offers {
     height: 431px;
     margin: 100px 0 60px 1px;
@@ -192,10 +212,12 @@
     font-family: var(--font-cairo);
     position: relative;
     direction: rtl;
+
     .img {
       position: absolute;
       left: 0px;
       bottom: 0px;
+
       img {
         width: 714px;
         height: 530px;
@@ -215,9 +237,11 @@
   &__ourpolicy {
     margin-bottom: 130px;
     font-family: var(--font-cairo);
+
     .card_item {
       text-align: center;
       margin-top: 40px;
+
       img {
         width: 130px;
         height: 130px;
@@ -232,6 +256,7 @@
           margin-top: 5px;
           margin-bottom: 8px;
         }
+
         span {
           width: 250px;
           margin: 0px auto;
@@ -248,33 +273,40 @@
 // 1- 1- Style Navbar Component To Media Queris Large.
 @media screen and (max-width: 991px) {
   .home {
+
     //  1- Style Slider Component
     &__slider {
       justify-content: space-between;
       align-items: center;
+
       .img {
         order: 2;
         position: static;
         width: 75%;
       }
+
       img {
         width: 100%;
         height: 575px;
       }
+
       .content {
         order: 1;
         height: auto;
         margin-bottom: 30px;
+
         h3 {
           margin-top: 60px;
           font-size: 30px;
         }
+
         p {
           margin-top: 30px;
           font-size: 20px;
         }
       }
     }
+
     &__categories {
       .header {
         position: relative;
@@ -282,6 +314,7 @@
         height: 140px;
         margin: 0px auto;
         margin-bottom: -25px;
+
         span {
           top: 6px;
           left: 16%;
@@ -291,6 +324,7 @@
       &__items {
         flex-direction: column;
         height: auto;
+
         .item {
           height: 100%;
           width: 100%;
@@ -304,11 +338,13 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
       .img {
         order: 2;
         position: static;
         width: 80%;
         height: 100%;
+
         img {
           width: 100%;
           height: 100%;
@@ -325,6 +361,7 @@
         margin-right: 40px;
       }
     }
+
     &__card {
       display: block;
       margin-bottom: 50px;
@@ -335,32 +372,39 @@
 // 1- 2- Style Navbar Component To Media Queris Samll.
 @media screen and (max-width: 576px) {
   .home {
+
     //  1- Style Slider Component
     &__slider {
       flex-direction: column;
+
       .img {
         order: 1;
         width: 100%;
       }
+
       img {
         height: 400px;
       }
+
       .content {
         order: 2;
         margin-right: 0px;
         text-align: center;
         margin-bottom: 50px;
+
         h3 {
           text-align: center;
           margin-top: 20px;
           font-size: 24px;
         }
+
         p {
           text-align: center;
           font-size: 18px;
         }
       }
     }
+
     &__categories {
       .header {
         width: 270px;
@@ -372,8 +416,10 @@
       margin-bottom: 15px;
       display: block;
       margin-bottom: 50px;
+
       .img {
         width: 100%;
+
         img {
           width: 100%;
         }
@@ -387,6 +433,7 @@
       justify-content: center;
       height: auto;
       padding: 20px 0px;
+
       .img {
         order: 1;
         position: static;

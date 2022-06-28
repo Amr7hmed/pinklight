@@ -14,6 +14,7 @@ import Myorders from './pages/Orders/index.jsx';
 import Mynotifications from './pages/Notifications/index.jsx';
 import MyAds from './pages/Ads/index.jsx';
 import Massages from './pages/Massages/index.jsx';
+import Proudects from './pages/Proudects/index.jsx';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/pinklight" element={<Home />} exact/>
             <Route path="/favorite" element={<Favorite/>} exact/>
+            <Route path="/proudects" element={<Proudects/>} exact/>
             <Route path="/proudect/:id" element={<Proudect/>} exact/>
             <Route path="/cart" element={<Cart/>} exact/>
             <Route path="/confirm" element={<Confirm/>} exact/>

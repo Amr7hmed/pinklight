@@ -2,6 +2,7 @@ import React from "react";
 import accessories from "../../images/categories/accessories.svg";
 import bag from "../../images/categories/bag.svg";
 import dress from "../../images/categories/dress.svg";
+import other from "../../images/categories/other.png";
 
 function PostCategories(props) {
   const {
@@ -52,7 +53,7 @@ function PostCategories(props) {
           className={"btn item " + showformouter}
           onClick={() => ShowItem(setShowformouter,setShowformaccessories,setShowformbag,setShowformdress)}
         >
-          <img src={dress} alt="accessories" />
+          <img src={other} alt="accessories" width={"60px"} height={"60px"}/>
           <span>أخرى</span>
         </button>
       </div>

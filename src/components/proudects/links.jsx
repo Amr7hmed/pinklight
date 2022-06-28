@@ -15,11 +15,6 @@ function Links() {
         كل المنتجات
       </NavLink>
 
-      <img src={Iconleft} alt="" />
-
-      <NavLink to={`/`} >
-        فستان برباط أمامى
-      </NavLink>
     </section>
   );
 }
