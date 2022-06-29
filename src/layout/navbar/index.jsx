@@ -32,7 +32,7 @@ function Navbar() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__logo">
-                <NavLink to="/pinklight">
+                <NavLink to="/">
                   <img src={Logo} alt="Logo" />
                 </NavLink>
               </div>

@@ -37,7 +37,7 @@ function SectionProducts() {
             </div>
 
             <div className="buttons">
-              <NavLink to="/proudects" className="btn">رؤية الكل</NavLink>
+              <NavLink to="/" className="btn">رؤية الكل</NavLink>
             </div>
           </div>
         </div>

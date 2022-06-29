@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter>
         <Navbar/>
           <Routes>
-            <Route path="/pinklight" element={<Home />} exact/>
+            <Route path="/" element={<Home />} exact/>
             <Route path="/favorite" element={<Favorite/>} exact/>
             <Route path="/proudects" element={<Proudects/>} exact/>
             <Route path="/proudect/:id" element={<Proudect/>} exact/>
