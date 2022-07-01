@@ -17,22 +17,22 @@ function SectionProducts() {
           </div>
 
           <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="col-6 col-lg-4">
               <CardProudect Image={Imageone} Title={"حقيبه مربعه مبطن قلاب"} Price={"76.00"} Id={"1"}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="col-6 col-lg-4">
               <CardProudect Image={Imagetwo} Title={"فستان برباط أمامى باكمام فانوس بعنق.."} Price={"76.00"} Id={"2"}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="col-6 col-lg-4">
               <CardProudect Image={Imagethree} Title={"حقيبه نسائيه مربعه مبطن"} Price={"76.00"} Id={"3"}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="col-6 col-lg-4">
               <CardProudect Image={Imagefour} Title={"فستان 2 في 1 بحزام غير متماثل باكمام ..."} Price={"76.00"}  Id={"4"}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="col-6 col-lg-4">
               <CardProudect Image={Imagefive} Title={"حزام بمشبك معدنى ثلاث قطع"} Price={"76.00"} Id={"5"}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="col-6 col-lg-4">
               <CardProudect Image={Imagesix} Title={"عصابة شعر مع لؤلؤ اصطناعى مع ..."} Price={"76.00"} Id={"6"}/>
             </div>
 
