@@ -1,6 +1,66 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { Api } from "../../../api";
+
 
 function Modelone() {
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+  const [toggole, setToggole] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setState({
+      ...state,
+      [e.target.name]: value,
+    });
+    setToggole(true);
+    setMessage("")
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    
+    const options = {
+      method: "post",
+      url: `${Api}login`,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: JSON.stringify({
+      ...state,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      console.log(response.data.access_token);
+      localStorage.setItem("token", JSON.stringify(response.data.access_token));
+      setToggole(true);
+      window.location.pathname = "/";
+    })
+    .catch(function (error) {
+      if (error.response) {
+        console.log(error.response.data);
+        setMessage(error.response.data.messge)
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        console.log(error.request);
+    } else {
+        console.log('Error', error.message);
+    }
+    console.log(error.config);
+    });
+
+    
+  };
+
+
   return (
     <div
       className="modal fade"
@@ -24,18 +84,24 @@ function Modelone() {
             تسجيل الدخول
           </h5>
           <div className="modal-body">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف/ البريد الإلكترونى
                 </label>
-                <input type="text" className="form-control" id="recipient-name" />
+                <input type="text" className="form-control" id="recipient-name" 
+                  name="email"
+                  value={state.email || ''}
+                  onChange={handleChange}/>
               </div>
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
                   كلمة المرور
                 </label>
-                <input type="password" className="form-control" id="recipient-name" />
+                <input type="password" className="form-control" id="recipient-name" 
+                  name="password"
+                  value={state.password}
+                  onChange={handleChange}/>
               </div>
 
               <div className="forget_password">
@@ -45,9 +111,15 @@ function Modelone() {
               data-bs-toggle="modal">هل نسيت كلمة المرور؟</span>
               
               </div>
+              <span className="errorfiled">{message}</span>
 
               
-              <button className="btn button-login">
+              <button type="submit"
+                className={
+                  toggole === false
+                    ? "btn button-login button-disabled"
+                    : "btn button-login button-active"
+                }>
               تسجيل الدخول
                </button>
             </form>

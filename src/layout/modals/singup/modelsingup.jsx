@@ -1,8 +1,62 @@
-import React from 'react'
+import axios from "axios";
+import React, { useState } from "react";
+import { Api } from "../../../api";
+
 
 function ModelSingup() {
+  const [state, setState] = useState({
+    email: "",
+  });
+  const [toggole ,setToggole] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setState({
+      [e.target.name]: value
+    });
+    setMessage("")
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("email", JSON.stringify(state.email));
+    const options = {
+      method: "post",
+      url: `${Api}signup/step1`,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+      data: JSON.stringify({
+      ...state,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      console.log(response.data.message)
+      setToggole(true)
+    })
+    .catch(function (error) {
+    // setToggole(false)
+      if (error.response) {
+        console.log(error.response.data.messge);
+        setMessage(error.response.data.messge)
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        console.log(error.request);
+    } else {
+        console.log('Error', error.message);
+    }
+    console.log(error.config);
+    });
+  };
+
+
+
   return (
-    
     <div
       className="modal fade"
       id="singupModal"
@@ -25,22 +79,26 @@ function ModelSingup() {
           إنشاء حساب جديد
           </h5>
           <div className="modal-body">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
-                  رقم الهاتف/ البريد الإلكترونى
+                  رقم الهاتف / البريد الإلكترونى
                 </label>
                 <input
                   type="text"
                   className="form-control"
                   id="recipient-name"
-                  disabled
+                  name="email"
+                  onChange={handleChange}
+                  value={state.email || ''}
                 />
               </div>
+              <span className="errorfiled">{message}</span>
 
-                <span className="btn button-login mb-5"
-              data-bs-target="#singupModal2"
-              data-bs-toggle="modal">المتابعه</span>
+                <button
+                className={state.email === ""?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
+                data-bs-target={toggole ===false?" ":"#singupModal2"}
+              data-bs-toggle="modal" type="submit">المتابعه</button>
             </form>
           </div>
         </div>

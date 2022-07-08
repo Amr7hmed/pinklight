@@ -16,7 +16,7 @@ function Navbar() {
         <div className="navbar__item row">
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__icons">
-                <Iconprofile/>
+                <Iconlogin/>
                 <NavLink to="/favorite">
                   <img src={Heart} alt="heart" />
                 </NavLink>
