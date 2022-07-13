@@ -4,7 +4,6 @@ import { Api } from "../../../api";
 
 function ModeltwoSingup() {
   const [state, setState] = useState({
-    email: JSON.parse(localStorage.getItem("email")),
     code: "",
   });
   const [toggole ,setToggole] = useState(false);
@@ -17,6 +16,7 @@ function ModeltwoSingup() {
       [e.target.name]: value
     });
     setMessage("")
+    setToggole(false)
   };
 
 
@@ -32,6 +32,7 @@ function ModeltwoSingup() {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: JSON.stringify({
+        email: JSON.parse(localStorage.getItem("email")),
       ...state,
       }),
     };
@@ -39,7 +40,7 @@ function ModeltwoSingup() {
       console.log("handle success");
       setToggole(true)
     }).catch(function (error) {
-      setToggole(false)
+      //setToggole(false)
       if (error.response) {
         console.log(error.response.data.message);
         setMessage(error.response.data.message)

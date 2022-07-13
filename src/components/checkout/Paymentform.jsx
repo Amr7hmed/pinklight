@@ -9,9 +9,9 @@ function Paymentform(props) {
       <h3>طريقة الدفع</h3>
 
       <div className="form">
-        <div class="form-check">
+        <div className="form-check">
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="radio"
             name="exampleRadios"
             id="exampleRadios1"
@@ -20,16 +20,16 @@ function Paymentform(props) {
             onChange={handleCash}
           />
 
-          <label class={"form-check-label "+ActiveCash} for="exampleRadios1">
+          <label className={"form-check-label "+ActiveCash} for="exampleRadios1">
             <span className="img">
                 <img src={Visaimg} alt="" />
             </span>
             <span className="text">الدفع عند الاستلام</span>
           </label>
         </div>
-        <div class="form-check">
+        <div className="form-check">
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="radio"
             name="exampleRadios"
             id="exampleRadios2"
@@ -38,7 +38,7 @@ function Paymentform(props) {
             onChange={handleVisa}
           />
 
-          <label class={"form-check-label "+ActiveCVisa} for="exampleRadios2">
+          <label className={"form-check-label "+ActiveCVisa} for="exampleRadios2">
             <span className="img">
                 <img src={Visaimg} alt="" />
             </span>

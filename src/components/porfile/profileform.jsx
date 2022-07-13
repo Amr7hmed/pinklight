@@ -136,7 +136,7 @@ function ProfileForm() {
               HidePendingads={HidePendingads}
               setItemPhone={setItemPhone}
               setInputPhone={setInputPhone}
-              Valueinput={"0555671979"}
+              Valueinput={"01019574658"}
             />
           </div>
         </div>
@@ -161,7 +161,6 @@ function ProfileForm() {
               HidePendingads={HidePendingads}
               setItemPassword={setItemPassword}
               setInputPassword={setInputPassword}
-              Valueinput={"amr"}
             />
           </div>
         </div>

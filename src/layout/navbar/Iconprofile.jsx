@@ -5,6 +5,10 @@ import User from "../../images/icon/user.svg";
 import Login from "../modals/login/index.jsx";
 
 function Iconprofile() {
+  const handleSubmit = () => {
+    localStorage.removeItem("token");
+    window.location.pathname = "/";
+  }
   return (
     <>
       <div className="dropdown">
@@ -40,7 +44,7 @@ function Iconprofile() {
           </li>
 
           <li className="dropdown-item">
-            <button className="btn">تسجيل الخروج</button>
+            <button type="submit" className="btn" onClick={() => handleSubmit()}>تسجيل الخروج</button>
           </li>
         </ul>
       </div>

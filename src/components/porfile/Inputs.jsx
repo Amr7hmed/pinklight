@@ -1,11 +1,23 @@
-import React from "react";
-import { Formik, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import React, { useState } from "react";
 import Imagcover from "../../images/icon/input-img-avatar.png";
 import Imagupload from "../../images/icon/input-img-upload.png";
 
 export function InputImag(props) {
   const { HidePendingads, setItemimg, setInputimg } = props;
+
+  const [file, setFile] = useState(null);
+  //const [message, setMessage] = useState("");
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setFile(value);
+    //setMessage("")
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(file);
+  };
+
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -19,20 +31,21 @@ export function InputImag(props) {
       </div>
 
       <div className="input-item">
-        <div className="input">
+        <form className="input" onSubmit={handleSubmit}>
           <div className="imageinput">
             <span className="imgcover">
               <img src={Imagcover} alt="" />
               <span className="imginput">
                 <img src={Imagupload} alt="" />
-              <input type="file" className="input-file" />
+                <input type="file" className="input-file"
+                  onChange={handleChange} />
               </span>
             </span>
           </div>
           <div className="submitdiv">
             <button type="submit">حفظ</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
@@ -40,6 +53,21 @@ export function InputImag(props) {
 
 export function InputNameset(props) {
   const { HidePendingads, setItemname, setInputname, Valueinput } = props;
+  const [name, setName] = useState(Valueinput);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setName(value);
+    setMessage("")
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(name);
+    HidePendingads(setItemname, setInputname)
+  };
+
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -53,45 +81,23 @@ export function InputNameset(props) {
       </div>
 
       <div className="input-item">
-        <div className="input">
-          <Formik
-            initialValues={{ name: Valueinput }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-            validationSchema={Yup.object().shape({
-              name: Yup.string()
-                .min(2, "الأسم صغير جدا !")
-                .max(15, "الأسم كبير جدا !")
-                .required("هذا الحقل هام جدا"),
-            })}
-          >
-            {(props) => (
-              <form onSubmit={props.handleSubmit}>
-                <input
-                  type="text"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                  value={props.values.name}
-                  placeholder={props.values.name}
-                  name="name"
-                  className={`form-control shadow-none input-fild ${
-                    props.values.name === "" ? "is-invalid" : ""
-                  }`}
-                  autoComplete="off"
-                />
-                <ErrorMessage
-                  name="name"
-                  component="div"
-                  className="errorfiled"
-                />
-                <div className="submitdiv">
-                  <button type="submit">حفظ</button>
-                </div>
-              </form>
-            )}
-          </Formik>
-        </div>
+
+        <form className="input" onSubmit={handleSubmit}>
+
+          <input type="text"
+            className="form-control shadow-none input-fild"
+            value={name}
+            name="name"
+            onChange={handleChange} />
+
+
+          <span className="errorfiled">{message}</span>
+
+          <div className="submitdiv">
+            <button type="submit">حفظ</button>
+          </div>
+        </form>
+
       </div>
     </div>
   );
@@ -99,57 +105,42 @@ export function InputNameset(props) {
 
 export function InputEmailset(props) {
   const { HidePendingads, setItememail, setInputemail, Valueinput } = props;
+  const [email, setEmail] = useState(Valueinput);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    setMessage("")
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(email);
+    HidePendingads(setItememail, setInputemail)
+  };
+
   return (
     <div className="input_contener">
       <div className="item_detils">
         <span>البريد الالكترونى</span>
-        <button
-          className="btn"
-          onClick={() => HidePendingads(setItememail, setInputemail)}
-        >
+        <button className="btn" onClick={() => HidePendingads(setItememail, setInputemail)}>
           إلغاء
         </button>
       </div>
 
       <div className="input-item">
-        <div className="input">
-          <Formik
-            initialValues={{ email: Valueinput }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-            validationSchema={Yup.object().shape({
-              email: Yup.string()
-                .email("بريد إلكتروني خاطئ")
-                .required("هذا الحقل هام جدا"),
-            })}
-          >
-            {(props) => (
-              <form onSubmit={props.handleSubmit}>
-                <input
-                  type="text"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                  value={props.values.email}
-                  placeholder={props.values.email}
-                  name="email"
-                  className={`form-control shadow-none input-fild input-fild-email text-left ${
-                    props.values.email === "" ? "is-invalid" : ""
-                  }`}
-                  autoComplete="off"
-                />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="errorfiled"
-                />
-                <div className="submitdiv">
-                  <button type="submit">حفظ</button>
-                </div>
-              </form>
-            )}
-          </Formik>
-        </div>
+        <form className="input" onSubmit={handleSubmit}>
+          <input type="text"
+            className="form-control shadow-none input-fild"
+            value={email}
+            name="email"
+            onChange={handleChange} />
+          <span className="errorfiled">{message}</span>
+          <div className="submitdiv">
+            <button type="submit">حفظ</button>
+          </div>
+        </form>
       </div>
     </div>
   );
@@ -157,6 +148,20 @@ export function InputEmailset(props) {
 
 export function InputPhoneset(props) {
   const { HidePendingads, setItemPhone, setInputPhone, Valueinput } = props;
+  const [phone, setPhone] = useState(Valueinput);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setPhone(value);
+    setMessage("")
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(phone);
+    HidePendingads(setItemPhone, setInputPhone)
+  };
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -170,53 +175,51 @@ export function InputPhoneset(props) {
       </div>
 
       <div className="input-item">
-        <div className="input">
-          <Formik
-            initialValues={{ mobile: Valueinput }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-            validationSchema={Yup.object().shape({
-              mobile: Yup.string()
-                .min(2, "رقم الهاتف صغير جدا !")
-                .max(15, "رقم الهاتف كبير جدا !")
-                .required("هذا الحقل هام جدا"),
-            })}
-          >
-            {(props) => (
-              <form onSubmit={props.handleSubmit}>
-                <input
-                  type="text"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                  value={props.values.mobile}
-                  placeholder={props.values.mobile}
-                  name="mobile"
-                  className={`form-control shadow-none input-fild ${
-                    props.values.mobile === "" ? "is-invalid" : ""
-                  }`}
-                  autoComplete="off"
-                />
-                <ErrorMessage
-                  name="mobile"
-                  component="div"
-                  className="errorfiled"
-                />
-                <div className="submitdiv">
-                  <button type="submit">حفظ</button>
-                </div>
-              </form>
-            )}
-          </Formik>
-        </div>
+        <form className="input" onSubmit={handleSubmit}>
+          <input type="tel"
+            className="form-control shadow-none input-fild"
+            value={phone}
+            name="phone"
+            pattern="[0-9]{11}"
+            onChange={handleChange} />
+          <span className="errorfiled">{message}</span>
+          <div className="submitdiv">
+            <button type="submit">حفظ</button>
+          </div>
+        </form>
+
       </div>
     </div>
   );
 }
 
 export function InputPasswordset(props) {
-  const { HidePendingads, setItemPassword, setInputPassword, Valueinput } =
-    props;
+  const { HidePendingads, setItemPassword, setInputPassword } = props;
+
+  const [state, setState] = useState({
+    password: "",
+    password_confirmation: "",
+    password_confirmation_2: "",
+  });
+
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setState({
+      ...state,
+      [e.target.name]: value,
+    });
+
+    setMessage("")
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(state);
+    HidePendingads(setItemPassword, setInputPassword)
+  };
+
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -229,90 +232,34 @@ export function InputPasswordset(props) {
         </button>
       </div>
 
+
       <div className="input-item">
-        <div className="input">
-          <Formik
-            initialValues={{
-              password: Valueinput,
-              changepassword: "",
-              confirmchangepassword: "",
-            }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-            validationSchema={Yup.object().shape({
-              password: Yup.string().required("This field is required"),
-              changepassword: Yup.string().when("password", {
-                is: (val) => (val && val.length > 0 ? false : true),
-                then: Yup.string().oneOf(
-                  [Yup.ref("password")],
-                  "Both password need to be the same"
-                ),
-              }),
+        <form className="input" onSubmit={handleSubmit}>
 
-              confirmchangepassword: Yup.string().when("changepassword", {
-                is: (val) => (val && val.length > 0 ? false : true),
-                then: Yup.string().oneOf(
-                  [Yup.ref("password")],
-                  "Both password need to be the same"
-                ),
-              }),
-            })}
-          >
-            {(props) => (
-              <form onSubmit={props.handleSubmit}>
-                <input
-                  type="password"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                  value={props.values.password}
-                  placeholder={props.values.password}
-                  name="password"
-                  className={`form-control shadow-none input-fild ${
-                    props.values.password === "" ? "is-invalid" : ""
-                  }`}
-                  autoComplete="off"
-                />
+          <input type="password"
+            className="form-control shadow-none input-fild"
+            name="password"
+            onChange={handleChange} />
 
-                <input
-                  type="password"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                  value={props.values.changepassword}
-                  placeholder={props.values.changepassword}
-                  name="changepassword"
-                  className={`form-control shadow-none input-fild ${
-                    props.values.changepassword === "" ? "is-invalid" : ""
-                  }`}
-                  autoComplete="off"
-                />
+          <input type="password"
+            className="form-control shadow-none input-fild"
+            name="password_confirmation"
+            onChange={handleChange} />
 
-                <input
-                  type="password"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                  value={props.values.confirmchangepassword}
-                  placeholder={props.values.confirmchangepassword}
-                  name="confirmchangepassword"
-                  className={`form-control shadow-none input-fild ${
-                    props.values.confirmchangepassword === ""
-                      ? "is-invalid"
-                      : ""
-                  }`}
-                  autoComplete="off"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="errorfiled"
-                />
-                <div className="submitdiv">
-                  <button type="submit">حفظ</button>
-                </div>
-              </form>
-            )}
-          </Formik>
-        </div>
+          <input type="password"
+            className="form-control shadow-none input-fild"
+            name="password_confirmation_2"
+            onChange={handleChange} />
+
+
+          <span className="errorfiled">{message}</span>
+
+          <div className="submitdiv">
+            <button type="submit">حفظ</button>
+          </div>
+
+        </form>
+
       </div>
     </div>
   );
@@ -320,6 +267,31 @@ export function InputPasswordset(props) {
 
 export function InputLanguageset(props) {
   const { HidePendingads, setItemLanguage, setInputLanguage } = props;
+
+  const [state, setState] = useState({
+    language: "",
+    languagear: "العربيه",
+    languageen: "الانجليزيه",
+  });
+
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setState({
+      language: value,
+    });
+
+    setMessage("")
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(state.language);
+    HidePendingads(setItemLanguage, setInputLanguage)
+  };
+
+
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -332,53 +304,29 @@ export function InputLanguageset(props) {
         </button>
       </div>
 
-      <div className="input-item">
-        <div className="input">
-          <Formik
-            initialValues={{
-              language: "language",
-              languagear: "العربيه",
-              languageen: "الانجليزيه",
-            }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
-          >
-            {(props) => (
-              <form onSubmit={props.handleSubmit}>
-                <div
-                  className="cheackpoxinputs"
-                  onChange={props.handleChange}
-                  onBlur={props.handleBlur}
-                >
-                  <label>
-                    <input
-                      type="radio"
-                      value={props.values.languagear}
-                      placeholder={props.values.language}
-                      name={props.values.language}
-                    />
-                    العربيه
-                  </label>
 
-                  <label>
-                    <input
-                      type="radio"
-                      value={props.values.languageen}
-                      placeholder={props.values.language}
-                      name={props.values.language}
-                    />
-                    الانجليزيه
-                  </label>
-                </div>
-                <div className="submitdiv">
-                  <button type="submit">حفظ</button>
-                </div>
-              </form>
-            )}
-          </Formik>
-        </div>
+      <div className="input-item">
+        <form className="input" onSubmit={handleSubmit}>
+          <div className="cheackpoxinputs">
+            
+          <label>
+            <input type="radio" value={state.languagear} name="language" onChange={handleChange} />
+            العربيه
+          </label>
+
+          <label>
+            <input type="radio" value={state.languageen} name="language" onChange={handleChange} />
+            الانجليزيه
+          </label>
+          </div>
+          <span className="errorfiled">{message}</span>
+          <div className="submitdiv">
+            <button type="submit">حفظ</button>
+          </div>
+        </form>
+
       </div>
+
     </div>
   );
 }

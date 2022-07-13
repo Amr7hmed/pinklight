@@ -1,5 +1,5 @@
 import React from 'react'
-import Carditem from '../../components/porfile/Card';
+import Carditem from '../../components/orders_ads/Card';
 import Imgcard from "../../images/product/img-7.webp";
 
 function Myorders() {

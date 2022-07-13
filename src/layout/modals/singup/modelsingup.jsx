@@ -16,10 +16,10 @@ function ModelSingup() {
       [e.target.name]: value
     });
     setMessage("")
+    setToggole(false)
   };
 
-
-  const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     localStorage.setItem("email", JSON.stringify(state.email));
     const options = {
@@ -33,16 +33,15 @@ function ModelSingup() {
       ...state,
       }),
     };
-    axios(options).then(function (response) {
+    await axios(options).then(function (response) {
       console.log("handle success");
-      console.log(response.data.message)
       setToggole(true)
     })
     .catch(function (error) {
-    // setToggole(false)
+    setToggole(false)
       if (error.response) {
-        console.log(error.response.data.messge);
-        setMessage(error.response.data.messge)
+        console.log(error.response.data);
+        setMessage(error.response.data.message)
         console.log(error.response.status);
         console.log(error.response.headers);
     } else if (error.request) {
@@ -92,13 +91,14 @@ function ModelSingup() {
                   onChange={handleChange}
                   value={state.email || ''}
                 />
+                <button className="btn send" type="submit">أرسال</button>
               </div>
               <span className="errorfiled">{message}</span>
 
                 <button
-                className={state.email === ""?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
-                data-bs-target={toggole ===false?" ":"#singupModal2"}
-              data-bs-toggle="modal" type="submit">المتابعه</button>
+                className={toggole === false?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
+                data-bs-target={toggole === false?" ":"#singupModal2"}
+              data-bs-toggle="modal">المتابعه</button>
             </form>
           </div>
         </div>

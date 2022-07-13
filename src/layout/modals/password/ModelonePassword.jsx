@@ -84,9 +84,7 @@ function ModelonePassword() {
 
               <span className="errorfiled">{message}</span>
               <div className="modal-footer">
-
-              
-<button
+                <button
                 className={state.email === "" ?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
                 data-bs-target={toggole === false?" ":"#exampleModalToggle3"}
               data-bs-toggle="modal" type="submit">المتابعه</button>

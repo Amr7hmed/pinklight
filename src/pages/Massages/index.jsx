@@ -1,6 +1,6 @@
 import React from 'react'
-import MassagesContent from '../../components/porfile/massagescontent';
-import MassagesUsers from '../../components/porfile/massagesusers';
+import MassagesContent from '../../components/massages/massagescontent';
+import MassagesUsers from '../../components/massages/massagesusers';
 import Imguser from "../../images/icon/user.svg";
 
 function Massages() {

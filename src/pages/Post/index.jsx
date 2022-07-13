@@ -1,13 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import PostCategorie from "../../components/posts/postcategories.jsx";
-import { AccessoriesForm, BigForm, DressForm, OuerForm } from "../../components/posts/postform.jsx";
+import Form from "../../components/posts/forms/Form.jsx";
 
 function Posts() {
-  const [showformdress, setShowformdress] = useState("show");
-  const [showformbag, setShowformbag] = useState("hide");
-  const [showformaccessories, setShowformaccessories] = useState("hide");
-  const [showformouter, setShowformouter] = useState("hide");
+  const [showformdress, setShowformdress] = useState(true);
 
   return (
     <section className="post">
@@ -16,29 +13,8 @@ function Posts() {
           <h4>أنشر إعلانك</h4>
         </div>
 
-        <PostCategorie
-          showformdress={showformdress}
-          setShowformdress={setShowformdress}
-          showformbag={showformbag}
-          setShowformbag={setShowformbag}
-          showformaccessories={showformaccessories}
-          setShowformaccessories={setShowformaccessories}
-          showformouter={showformouter}
-          setShowformouter={setShowformouter}
-        />
-        <div className={showformdress}>
-        <DressForm/>
-        </div>
-        <div className={showformbag}>
-        <BigForm/>
-        </div>
-        <div className={showformaccessories}>
-        <AccessoriesForm/>
-        </div>
-
-        <div className={showformouter}>
-          <OuerForm/>
-        </div>
+        <PostCategorie setShowformdress={setShowformdress}/>
+        <Form showformdress={showformdress}/>
       </div>
     </section>
   );

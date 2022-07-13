@@ -8,60 +8,60 @@ function Confirmform() {
 
       <div className="formgroup">
         <form>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 mb_20">
+            <div className="row">
+              <div className="col-sm-12 col-md-6 mb_20">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="البلد/المنطقه*"
                 />
             </div>
           </div>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 mb_20">
+            <div className="row">
+              <div className="col-sm-12 col-md-6 mb_20">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="اسم الاسره*"
                 />
               </div>
-              <div class="col-sm-12 col-md-6 mb_20">
-                <input type="text" class="form-control" placeholder="الاسم*" />
+              <div className="col-sm-12 col-md-6 mb_20">
+                <input type="text" className="form-control" placeholder="الاسم*" />
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-sm-12 mb_20">
+            <div className="row">
+              <div className="col-sm-12 mb_20">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="رقم الجوال*"
                 />
             </div>
           </div>
 
-            <div class="row">
-              <div class="col-sm-12 col-md-6 mb_20">
+            <div className="row">
+              <div className="col-sm-12 col-md-6 mb_20">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="المدينه*"
                 />
             </div>
-              <div class="col-sm-12 col-md-6 mb_20">
+              <div className="col-sm-12 col-md-6 mb_20">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="الرمز البريدى*"
                 />
               </div>
           </div>
 
-            <div class="row">
-              <div class="col-sm-12 mb_20">
+            <div className="row">
+              <div className="col-sm-12 mb_20">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="تفاصيل العنوان*"
                 />
               </div>

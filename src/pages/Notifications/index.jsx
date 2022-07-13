@@ -1,5 +1,5 @@
 import React from "react";
-import Notificationsitem from "../../components/porfile/Notificationsitem";
+import Notificationsitem from "../../components/notifications/Notificationsitem";
 
 function Mynotifications() {
   return (

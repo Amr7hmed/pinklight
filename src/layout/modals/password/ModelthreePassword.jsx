@@ -4,7 +4,6 @@ import { Api } from "../../../api";
 
 
 function ModelthreePassword(props) {
-  console.log(props.code);
   const [state, setState] = useState({
     email: JSON.parse(localStorage.getItem("email")),
     password: "",
@@ -33,9 +32,8 @@ function ModelthreePassword(props) {
         "Content-Type": "application/json;charset=UTF-8",
       },
       data: JSON.stringify({
-        email: state.email,
         code: props.code,
-        password:state.password,
+        ...state,
       }),
     };
     axios(options).then(function (response) {

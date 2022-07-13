@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Currentads from "../../components/porfile/currentads";
-import Pendingads from "../../components/porfile/pendingads";
+import Currentads from "../../components/orders_ads/currentads";
+import Pendingads from "../../components/orders_ads/pendingads";
 
 function MyAds() {
   const [Activebutton , setActivebutton] = useState("activebutton");

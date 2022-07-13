@@ -45,7 +45,7 @@ function ModelThreeSingup() {
       if (error.response) {
         setToggole(false)
         console.log(error.response.data);
-        setMessage(error.response.data.messge)
+        setMessage(error.response.data.message)
         console.log(error.response.status);
         console.log(error.response.headers);
     } else if (error.request) {

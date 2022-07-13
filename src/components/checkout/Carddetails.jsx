@@ -7,38 +7,38 @@ function Carddetails() {
 
       <div className="carddetails__form">
         <form>
-          <div class="row">
-            <div class="col-sm-12 col-md-8 mb_20">
+          <div className="row">
+            <div className="col-sm-12 col-md-8 mb_20">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="اسم صاحب البطاقه*"
               />
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-sm-12 mb_20">
+          <div className="row">
+            <div className="col-sm-12 mb_20">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="رقم البطاقه*"
               />
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-sm-12 col-md-6 mb_20">
+          <div className="row">
+            <div className="col-sm-12 col-md-6 mb_20">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="رمز الأمن*"
               />
             </div>
-            <div class="col-sm-12 col-md-6 mb_20">
+            <div className="col-sm-12 col-md-6 mb_20">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="تاريخ انتهاء الصلاحيه*"
               />
             </div>

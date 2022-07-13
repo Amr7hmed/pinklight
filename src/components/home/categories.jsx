@@ -17,16 +17,16 @@ function Categories() {
 
           <div className="home__categories__items">
               <div className="item">
-                  <img src={dress} alt="dress" />
+                  <img src={dress} alt="dress"  className="img-ouer"/>
                   <span>فساتين</span>
               </div>
 
               <div className="item">
-                  <img src={accessories} alt="dress" />
+                  <img src={accessories} alt="dress" className="img-ouer"/>
                   <span>اكسسوارات</span>
               </div>
               <div className="item">
-                  <img src={bag} alt="dress" />
+                  <img src={bag} alt="dress"  className="img-ouer"/>
                   <span>حقائب</span>
               </div>
               <div className="item">

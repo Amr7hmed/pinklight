@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Modelpost(props) {
   const { vispiltymodule , Hidemodule } = props;
+  const [checked, setChecked] = useState(false);
   return (
     <section className={"modelpost " + vispiltymodule}>
       <div className="modelpost__contener">
@@ -20,14 +21,16 @@ function Modelpost(props) {
         </p>
 
         <div className="modelpost__checkbox">
-          <input type="checkbox" value="lsRememberMe" id="rememberMe" />
+          <input type="checkbox" value="lsRememberMe" id="rememberMe" 
+        defaultChecked={checked}
+        onChange={() => setChecked(!checked)}/>
           <label htmlFor="rememberMe">
             أوافق على هذه الشروط والاحكام وسياسة الخصوصيه
           </label>
         </div>
 
         <div className="modelpost__buttons">
-          <NavLink to="/post" className="btn button-right" onClick={Hidemodule}>
+          <NavLink to="/post" className={checked === false ?"button-disabled btn button-right":"button-active btn button-right"} onClick={Hidemodule}>
             المتابعه
           </NavLink>
           <button className="btn button-left" onClick={Hidemodule}>إلغاء</button>
