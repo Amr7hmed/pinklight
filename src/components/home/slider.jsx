@@ -1,5 +1,6 @@
 import React from 'react';
 import Imgslider from "../../images/bg/slider.png";
+import { NavLink } from "react-router-dom";
 
 function Slider() {
   return (
@@ -21,9 +22,9 @@ function Slider() {
             إطلالتك الخاصه مع القطع الرائجه
             </p>
 
-            <button className='btn'>
-            تسوقى الان
-            </button>
+              <NavLink to="/proudects" className="btn">
+              تسوق الان
+                </NavLink>
         </div>
         </section>
   )

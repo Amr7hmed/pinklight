@@ -89,7 +89,7 @@ function Modelone() {
                 <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف/ البريد الإلكترونى
                 </label>
-                <input type="text" className="form-control" id="recipient-name" 
+                <input type="text" className="form-control"  
                   name="email"
                   value={state.email || ''}
                   onChange={handleChange}/>
@@ -98,7 +98,7 @@ function Modelone() {
                 <label htmlFor="recipient-name" className="col-form-label">
                   كلمة المرور
                 </label>
-                <input type="password" className="form-control" id="recipient-name" 
+                <input type="password" className="form-control"  
                   name="password"
                   value={state.password}
                   onChange={handleChange}/>

@@ -80,7 +80,7 @@ props.setCode(state.code);
                 <input
                   type="text"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="email"
                   value={state.email || ''}
                   onChange={handleChange}
@@ -94,7 +94,7 @@ props.setCode(state.code);
                 <input
                   type="text"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="code"
                   value={state.code || ''}
                   onChange={handleChange}

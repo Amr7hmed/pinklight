@@ -82,7 +82,7 @@ function ModeltwoSingup() {
                 <input
                   type="text"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="code"
                   onChange={handleChange}
                   value={state.code || ''}

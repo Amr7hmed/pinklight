@@ -82,7 +82,7 @@ function ModelthreePassword(props) {
                 <label htmlFor="recipient-name" className="col-form-label">
                 ادخل كلمة المرور الجديده
                 </label>
-                <input type="password" className="form-control" id="recipient-name"
+                <input type="password" className="form-control" 
                   name="password"
                   value={state.password || ''}
                   onChange={handleChange} />
@@ -92,7 +92,7 @@ function ModelthreePassword(props) {
                 <label htmlFor="recipient-name" className="col-form-label">
                 إعد ادخال كلمة المرور الجديده
                 </label>
-                <input type="password" className="form-control" id="recipient-name" 
+                <input type="password" className="form-control"  
                   name="password_confirmation"
                   value={state.password_confirmation || ''}
                   onChange={handleChange}/>

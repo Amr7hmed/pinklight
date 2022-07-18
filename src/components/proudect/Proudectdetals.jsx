@@ -2,11 +2,12 @@ import React from "react";
 import Links from "./links";
 import Proudectitem from "./Proudectitem";
 
-function Proudectdetals() {
+function Proudectdetals(props) {
+  const {product}=props;
   return (
     <section className="proudect__detals">
       <Links />
-      <Proudectitem />
+      <Proudectitem product={product} />
     </section>
   );
 }

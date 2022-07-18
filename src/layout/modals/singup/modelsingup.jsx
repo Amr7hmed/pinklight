@@ -86,7 +86,7 @@ function ModelSingup() {
                 <input
                   type="text"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="email"
                   onChange={handleChange}
                   value={state.email || ''}

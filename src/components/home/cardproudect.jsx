@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import HeartIcon from "../../images/icon/heart_icon.svg";
+import ShoppinIcon from "../../images/icon/shopping-bag_icon.svg";
 
 function CardProudect(props) {
-  const { Title, Image, Price ,Id } = props;
-  
+  const { Title, Image, Price, Id, ClassCard } = props;
+
 
   const [isVisible, setIsVisible] = useState(false);
-   // Top: 0 takes us all the way back to the top of the page
+  // Top: 0 takes us all the way back to the top of the page
   // Behavior: smooth keeps it smooth!
   const scrollToTop = () => {
     window.scrollTo({
@@ -32,9 +34,17 @@ function CardProudect(props) {
 
   return (
     <>
-      <NavLink  to={`/proudect/${Id}`} className="home__card" onClick={scrollToTop}>
+      <NavLink to={`/proudect/${Id}`} className={ClassCard} onClick={scrollToTop}>
         <div className="img">
           <img src={Image} alt="Proudect" />
+          <div className="card_hover">
+            <button className="btn btn-heart">
+              <img src={HeartIcon} alt="" />
+            </button>
+            <button className="btn btn-shopping">
+              <img src={ShoppinIcon} alt="" />
+            </button>
+          </div>
         </div>
 
         <div className="content">

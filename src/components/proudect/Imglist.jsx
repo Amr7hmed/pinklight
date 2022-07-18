@@ -5,7 +5,7 @@ function Imglist(props) {
   return (
     <div className="proudect__imglist">
       {Images.map((item,index)=>
-      <img src={item} alt={`${item} ${index}`} key={index} onClick={()=>setindex(index)} />
+      <img src={item.image} alt={`${item} ${index}`} key={index} onClick={()=>setindex(index)} />
       )}
     </div>
   );

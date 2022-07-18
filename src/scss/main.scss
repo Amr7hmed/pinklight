@@ -109,7 +109,14 @@ img {
   .errorfiled{
     color: red
   }
+  input[type='checkbox'] {
+    accent-color: #fb6f7e!important;
+  }
+  input[type='radio']{
+    accent-color: #fb6f7e!important;
+  }
 @import "../layout/navbar/_style.scss";
+@import "../layout/loading/_style.scss";
 @import "../components/home/_style.scss";
 @import "../components/favorite/_style.scss";
 @import "../components/proudect/_style.scss";
@@ -120,3 +127,4 @@ img {
 @import "../components/posts/_style.scss";
 @import "../components/porfile/_style.scss";
 @import "../components/proudects/_style.scss";
+@import "../components/fillter/_style.scss";

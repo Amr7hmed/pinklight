@@ -90,7 +90,7 @@ function ModelThreeSingup() {
                 <input
                   type="text"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="name"
                   value={state.name || ''}
                   onChange={handleChange}
@@ -104,7 +104,7 @@ function ModelThreeSingup() {
                 <input
                   type="email"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="email"
                   value={state.email || ''}
                   onChange={handleChange}
@@ -118,7 +118,7 @@ function ModelThreeSingup() {
                 <input
                   type="password"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="password"
                   value={state.password || ''}
                   onChange={handleChange}
@@ -132,7 +132,7 @@ function ModelThreeSingup() {
                 <input
                   type="password"
                   className="form-control"
-                  id="recipient-name"
+                  
                   name="password_confirmation"
                   value={state.password_confirmation || ''}
                   onChange={handleChange}

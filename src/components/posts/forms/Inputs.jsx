@@ -1,6 +1,5 @@
 import React from "react";
 import InputImgUpload from "../../../images/icon/img-upload.svg";
-import Manimg from "../../../images/icon/salse-man.svg";
 
 
 
@@ -327,15 +326,6 @@ export function SalesDetails(props) {
       <h6>راجع التفاصيل الخاصه بك</h6>
 
       <div>
-
-        <div className="form-group form-group-username">
-          <img src={Manimg} alt="" />
-          <input type="text" className="form-control" placeholder="اسم المستخدم"
-            name="nameuser"
-            onChange={handleChange} />
-        </div>
-
-
         <div className="form-group">
           <input type="tel" className="form-control" placeholder="رقم الجوال/اختيارى"
             pattern="[0-9]{11}"

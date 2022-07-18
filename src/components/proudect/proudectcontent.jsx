@@ -8,7 +8,8 @@ import cartimg from "../../images/icon/cart.svg";
 import likeimg from "../../images/icon/love.svg";
 
 function ProudectContent(props) {
-  const { Title, Price } = props;
+  const { Title, Price ,colors, brand,status } = props;
+  
   return (
     <section className="proudect__content">
       <div className="header">

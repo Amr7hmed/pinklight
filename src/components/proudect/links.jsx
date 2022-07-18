@@ -8,18 +8,14 @@ function Links() {
       <NavLink to={`/pinklight`} >
         الصفحه الرئيسيه
       </NavLink>
-
       <img src={Iconleft} alt="" />
-
       <NavLink to={`/proudects`} >
         كل المنتجات
       </NavLink>
-
       <img src={Iconleft} alt="" />
-
-      <NavLink to={`/`} >
+      <span>
         فستان برباط أمامى
-      </NavLink>
+      </span>
     </section>
   );
 }

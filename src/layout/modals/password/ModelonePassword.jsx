@@ -76,7 +76,7 @@ function ModelonePassword() {
                 <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف/ البريد الإلكترونى
                 </label>
-                <input type="text" className="form-control" id="recipient-name" 
+                <input type="text" className="form-control"  
                   name="email"
                   onChange={handleChange}
                   value={state.email || ''}/>
