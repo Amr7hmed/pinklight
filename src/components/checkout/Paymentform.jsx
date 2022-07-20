@@ -20,7 +20,7 @@ function Paymentform(props) {
             onChange={handleCash}
           />
 
-          <label className={"form-check-label "+ActiveCash} for="exampleRadios1">
+          <label className={"form-check-label "+ActiveCash} htmlFor="exampleRadios1">
             <span className="img">
                 <img src={Visaimg} alt="" />
             </span>
@@ -38,7 +38,7 @@ function Paymentform(props) {
             onChange={handleVisa}
           />
 
-          <label className={"form-check-label "+ActiveCVisa} for="exampleRadios2">
+          <label className={"form-check-label "+ActiveCVisa} htmlFor="exampleRadios2">
             <span className="img">
                 <img src={Visaimg} alt="" />
             </span>

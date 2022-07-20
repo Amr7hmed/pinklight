@@ -16,7 +16,8 @@ function SectionProducts(props) {
             
           {products.map(item =>
             <div className="col-6 col-lg-4" key={item.id}>
-              <CardProudect Image={item.image} Title={item.title} Price={item.price} Id={item.id} ClassCard={"home__card"}/>
+              <CardProudect Image={item.image} Title={item.title} Price={item.price} Id={item.id} ClassCard={"home__card"}
+              Item={item}/>
             </div>
             )}
 

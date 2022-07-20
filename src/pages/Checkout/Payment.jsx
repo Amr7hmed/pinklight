@@ -3,10 +3,43 @@ import Demand from "../../components/checkout/Demand";
 import { NavLink } from "react-router-dom";
 import Iconleft from "../../images/icon/chevron-left-solid.svg";
 import Paymentform from '../../components/checkout/Paymentform';
+import axios from 'axios';
+import { Api } from '../../api';
 
 function Payment() {
   const Price = 76,
   Shipping = 10;
+
+  const handleSubmit = (data) => {
+    const options = {
+      method: "post",
+      url: `${Api}order/payment/1`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`, 
+      },
+      data: JSON.stringify({
+        "payment": data
+      })
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      console.log(response.messge)
+    })
+    .catch(function (error) {
+      if (error.response) {
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        console.log(error.request);
+    } else {
+        console.log('Error', error.message);
+    }
+    console.log(error.config);
+    });
+  };
 
   const [isCash, setIsCash] = useState(false);
   const [isVisa, setIsVisa] = useState(false);
@@ -20,6 +53,7 @@ function Payment() {
     setActive("active");
     setActiveCash("active")
     setActiveCVisa("noactive")
+    handleSubmit("cach")
   };
 
   const handleVisa = () => {
@@ -28,6 +62,7 @@ function Payment() {
     setActive("active");
     setActiveCash("noactive")
     setActiveCVisa("active")
+    handleSubmit("visa")
   };
 
   return (

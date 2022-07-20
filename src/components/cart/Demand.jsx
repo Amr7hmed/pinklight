@@ -2,8 +2,16 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Demand(props) {
-  const { Price, counter } = props;
-  let Totle = Price * counter;
+  const { Products } = props;
+  const newstate = [];
+
+  Products.forEach((element) => {newstate.push(parseInt(element.count)* parseInt(element.price))});
+
+  let Totleprice = newstate.reduce(function (previousValue, currentValue){return previousValue + currentValue});
+
+  console.log(newstate);
+  console.log(Totleprice);
+
   return (
     <section className="cartpage__demand">
       <h4>موجز الطلب</h4>
@@ -11,7 +19,7 @@ function Demand(props) {
       <div className="price">
         <span>إجمالي المبلغ</span>
 
-        <span>SR {Totle.toFixed(2)}</span>
+        <span>SR {Totleprice}</span>
       </div>
 
       <div className="buttons">
