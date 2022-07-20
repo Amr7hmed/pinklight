@@ -86,7 +86,6 @@ function ProfileForm() {
               HidePendingads={HidePendingads}
               setItemname={setItemname}
               setInputname={setInputname}
-              Valueinput={"ساره ابراهيم"}
             />
           </div>
         </div>

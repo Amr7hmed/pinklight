@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { Api } from "../../api";
 import Imagcover from "../../images/icon/input-img-avatar.png";
 import Imagupload from "../../images/icon/input-img-upload.png";
 
@@ -13,11 +15,41 @@ export function InputImag(props) {
     //setMessage("")
   };
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(file);
-  };
+    HidePendingads(setItemimg, setInputimg)
+    const options = {
+      method: "put",
+      url: `${Api}update-profile`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        file:file
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
 
+
+  };
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -52,8 +84,8 @@ export function InputImag(props) {
 }
 
 export function InputNameset(props) {
-  const { HidePendingads, setItemname, setInputname, Valueinput } = props;
-  const [name, setName] = useState(Valueinput);
+  const { HidePendingads, setItemname, setInputname } = props;
+  const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
@@ -62,12 +94,41 @@ export function InputNameset(props) {
     setMessage("")
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name);
     HidePendingads(setItemname, setInputname)
-  };
+    const options = {
+      method: "put",
+      url: `${Api}update-profile`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        name: name,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          //setMessage(error.response.data.messge)
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
 
+
+  };
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -104,8 +165,8 @@ export function InputNameset(props) {
 }
 
 export function InputEmailset(props) {
-  const { HidePendingads, setItememail, setInputemail, Valueinput } = props;
-  const [email, setEmail] = useState(Valueinput);
+  const { HidePendingads, setItememail, setInputemail } = props;
+  const [email, setEmail] = useState();
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
@@ -114,12 +175,41 @@ export function InputEmailset(props) {
     setMessage("")
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
     HidePendingads(setItememail, setInputemail)
-  };
+    const options = {
+      method: "put",
+      url: `${Api}update-profile`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        email: email,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          //setMessage(error.response.data.messge)
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
 
+
+  };
   return (
     <div className="input_contener">
       <div className="item_detils">
@@ -147,8 +237,8 @@ export function InputEmailset(props) {
 }
 
 export function InputPhoneset(props) {
-  const { HidePendingads, setItemPhone, setInputPhone, Valueinput } = props;
-  const [phone, setPhone] = useState(Valueinput);
+  const { HidePendingads, setItemPhone, setInputPhone } = props;
+  const [phone, setPhone] = useState();
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
@@ -157,10 +247,42 @@ export function InputPhoneset(props) {
     setMessage("")
   };
 
-  const handleSubmit = async (e) => {
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(phone);
     HidePendingads(setItemPhone, setInputPhone)
+    const options = {
+      method: "put",
+      url: `${Api}update-profile`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        phone: phone,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          //setMessage(error.response.data.messge)
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
+
+
   };
   return (
     <div className="input_contener">
@@ -195,14 +317,14 @@ export function InputPhoneset(props) {
 
 export function InputPasswordset(props) {
   const { HidePendingads, setItemPassword, setInputPassword } = props;
+  const [message, setMessage] = useState("");
 
   const [state, setState] = useState({
     password: "",
     password_confirmation: "",
-    password_confirmation_2: "",
   });
 
-  const [message, setMessage] = useState("");
+
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -214,10 +336,42 @@ export function InputPasswordset(props) {
     setMessage("")
   };
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state);
-    HidePendingads(setItemPassword, setInputPassword)
+    const options = {
+      method: "put",
+      url: `${Api}update-profile`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        ...state,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      HidePendingads(setItemPassword, setInputPassword)
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          setMessage(error.response.data.message)
+          console.log(error.response.status);
+          console.log(error.response.headers);
+          HidePendingads()
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
+
+
   };
 
   return (
@@ -246,14 +400,7 @@ export function InputPasswordset(props) {
             name="password_confirmation"
             onChange={handleChange} />
 
-          <input type="password"
-            className="form-control shadow-none input-fild"
-            name="password_confirmation_2"
-            onChange={handleChange} />
-
-
           <span className="errorfiled">{message}</span>
-
           <div className="submitdiv">
             <button type="submit">حفظ</button>
           </div>
@@ -270,9 +417,10 @@ export function InputLanguageset(props) {
 
   const [state, setState] = useState({
     language: "",
-    languagear: "العربيه",
-    languageen: "الانجليزيه",
+    languagear: "ar",
+    languageen: "en",
   });
+
 
   const [message, setMessage] = useState("");
 
@@ -285,12 +433,43 @@ export function InputLanguageset(props) {
     setMessage("")
   };
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state.language);
     HidePendingads(setItemLanguage, setInputLanguage)
-  };
+    console.log(state);
+    const options = {
+      method: "put",
+      url: `${Api}update-profile`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        language:state.language
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          setMessage(error.response.data.message)
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
 
+
+  };
 
   return (
     <div className="input_contener">
@@ -308,16 +487,16 @@ export function InputLanguageset(props) {
       <div className="input-item">
         <form className="input" onSubmit={handleSubmit}>
           <div className="cheackpoxinputs">
-            
-          <label>
-            <input type="radio" value={state.languagear} name="language" onChange={handleChange} />
-            العربيه
-          </label>
 
-          <label>
-            <input type="radio" value={state.languageen} name="language" onChange={handleChange} />
-            الانجليزيه
-          </label>
+            <label>
+              <input type="radio" value={state.languagear} name="language" onChange={handleChange} />
+              العربيه
+            </label>
+
+            <label>
+              <input type="radio" value={state.languageen} name="language" onChange={handleChange} />
+              الانجليزيه
+            </label>
           </div>
           <span className="errorfiled">{message}</span>
           <div className="submitdiv">
