@@ -10,6 +10,8 @@ import Loading from "../../layout/loading/loading";
 function Proudect(props) {
   const {id}=useParams();
   const [product, setProduct] = useState("");
+  const [similarproducts, setSimilarproducts] = useState("");
+  
   const [loading, setLoading] = useState(false);
 
   const fetchPost = async () => {
@@ -24,7 +26,9 @@ function Proudect(props) {
     await axios(options).then(function (response) {
       setLoading(true);
      console.log("handle success");
+     console.log(response.data);
      setProduct(response.data.product)
+     setSimilarproducts(response.data.similarproducts)
     })
     .catch(function (error) {
       console.log("handle error");
@@ -46,7 +50,7 @@ function Proudect(props) {
           <section className="proudect">
             <div className="container">
               <Proudectdetals product={product}/>
-              <Proudectlist/>
+              <Proudectlist Similarproducts={similarproducts}/>
             </div>
           </section>
 

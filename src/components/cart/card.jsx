@@ -4,16 +4,16 @@ import { Api } from "../../api/index.js";
 import axios from "axios";
 
 function CartCard(props) {
-  const { Image, Title, Price, Color, Size, counter, Id } = props;
+  const { Image, Title, Price, Color, Size, counter, Id ,Cartid , setLoading} = props;
 
   const count = parseInt(counter);
 
   const [counternumber, setCounternumber] = useState(count);
 
-  const handleSubmit = (action ,Id) => {
+  const handleSubmit = (action) => {
     const options = {
       method: "post",
-      url: `${Api}order/update/3`,
+      url: `${Api}order/update/${Cartid}`,
       headers: {
         Accept: "application/json",
         'Content-Type': 'application/json',
@@ -43,14 +43,42 @@ function CartCard(props) {
   };
 
 
+  const deleteCart = () => {
+    const options = {
+      method: "DELETE",
+      url: `${Api}order/products/${Id}`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      console.log(response)
+      setLoading(false)
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
+  };
   const increase = () => {
     setCounternumber(count => count + 1);
-    handleSubmit("increase" , Id);
+    handleSubmit("increase");
   };
 
   //decrease counter
   const decrease = () => {
-    handleSubmit("decrease" , Id);
+    handleSubmit("decrease");
     if (counter <= 1) {
       setCounternumber(1);
     } else {
@@ -82,7 +110,7 @@ function CartCard(props) {
 
       <div className="action">
         <button className="btn">
-          <img src={Clearimg} alt="Clear" />
+          <img src={Clearimg} alt="Clear" onClick={()=>deleteCart()}/>
         </button>
 
 

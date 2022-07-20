@@ -11,6 +11,7 @@ function Proudects() {
   const [products, setProducts] = useState("");
   const [loading, setLoading] = useState(false);
   const [pageCount, setpageCount] = useState(1);
+  const [perpage , setPerpage]=useState();
 
   const fetchPost = async () => {
     const  options = {
@@ -24,7 +25,10 @@ function Proudects() {
     await axios(options).then(function (response) {
       setLoading(true);
      console.log("handle success");
-     setProducts(response.data.products)
+     console.log(response.data.products);
+     console.log(response.data.products.data);
+     setPerpage(response.data.products.per_page);
+     setProducts(response.data.products.data)
     })
     .catch(function (error) {
       console.log("handle error");
@@ -53,7 +57,7 @@ function Proudects() {
                 <Fillter setProducts={setProducts} setLoading={setLoading}/>
               </div>
               <div className="col-lg-9 col-md-12">
-                <AllProudect products={products} setpageCount={setpageCount} pageCount={pageCount}/>
+                <AllProudect products={products} setpageCount={setpageCount} pageCount={pageCount} perpage={perpage}/>
               </div>
             </div>
             </div>

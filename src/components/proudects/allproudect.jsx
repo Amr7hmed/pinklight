@@ -5,7 +5,7 @@ import CardProudect from '../home/cardproudect.jsx';
 import ReactPaginate from "react-paginate";
 
 function AllProudect(props) {
-  const { products , setpageCount} = props;
+  const { products , setpageCount ,perpage} = props;
 
    const handlePageClick = (data) => {
      let number = 1 + data.selected;
@@ -29,7 +29,7 @@ function AllProudect(props) {
         previousLabel={"<"}
         nextLabel={">"}
         breakLabel={"..."}
-        pageCount={4}
+        pageCount={perpage/4}
         marginPagesDisplayed={2}
         pageRangeDisplayed={3}
         onPageChange={handlePageClick}

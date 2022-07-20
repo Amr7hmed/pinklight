@@ -8,31 +8,20 @@ import Image4 from "../../images/products/img-9.png";
 import Image5 from "../../images/products/img-10.png";
 import Image6 from "../../images/products/img-11.png";
 
-function Proudectlist() {
+function Proudectlist(props) {
+  const {Similarproducts}=props;
   return (
     <section className='proudect__list'>
         <h3>منتجات مشابهه</h3>
 
         <div className="row">
-            <div className="col-sm-6 col-md-6 col-lg-4">
-              <CardProudect Image={Image1} Title={"فستان برباط أمامى باكمام فانوس بعنق.."} Price={"76.00"} Id={"1"}  ClassCard={"proudects__card"} />
+          {Similarproducts.map( item=>
+            <div className="col-sm-6 col-md-6 col-lg-3">
+              <CardProudect Image={item.image} 
+              Title={item.title} 
+              Price={item.price} Id={item.id}  ClassCard={"proudects__card"}/>
             </div>
-            <div className="col-sm-6 col-md-6 col-lg-4">
-              <CardProudect Image={Image2} Title={"فستان 2 في 1 بحزام غير متماثل باكمام .."} Price={"104.00"} Id={"1"}  ClassCard={"proudects__card"} />
-            </div>
-            <div className="col-sm-6 col-md-6 col-lg-4">
-              <CardProudect Image={Image3} Title={"فستان طباعة الازهار رباط امامى اكمام ..."} Price={"71.00"} Id={"1"}  ClassCard={"proudects__card"} />
-            </div>
-            <div className="col-sm-6 col-md-6 col-lg-4">
-              <CardProudect Image={Image4} Title={"فستان برباط أمامى باكمام فانوس بعنق.."} Price={"76.00"} Id={"1"}  ClassCard={"proudects__card"} />
-            </div>
-            <div className="col-sm-6 col-md-6 col-lg-4">
-              <CardProudect Image={Image5} Title={"فستان 2 في 1 بحزام غير متماثل باكمام .."} Price={"102.00"} Id={"1"}  ClassCard={"proudects__card"} />
-            </div>
-            <div className="col-sm-6 col-md-6 col-lg-4">
-              <CardProudect Image={Image6} Title={"فستان 2 في 1 بحزام غير متماثل باكمام .."} Price={"76.00"} Id={"1"}  ClassCard={"proudects__card"} />
-
-            </div>
+              )}
         </div>
         
         <div className="buttons">

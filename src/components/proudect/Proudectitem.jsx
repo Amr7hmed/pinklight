@@ -20,6 +20,9 @@ function Proudectitem(props) {
         colors={product.colors}
         brand={product.brand}
         status={product.product_status}
+        Sizes={product.sizes}
+        User={product.user}
+        Id={product.id}
       />
     </section>
     

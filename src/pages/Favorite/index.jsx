@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Cardfavorite from "../../components/favorite/index.jsx";
-import Imgcardone from "../../images/favorite/img-1.png";
-import Imgcardtwo from "../../images/favorite/img-2.png";
 import axios from "axios";
 import { Api } from "../../api/index.js";
+import Loading from "../../layout/loading/loading.jsx";
 
 
 function Favorite() {
@@ -24,14 +23,14 @@ function Favorite() {
        setLoading(true);
       console.log("handle success");
       console.log(response.data);
-      //setProducts(response.data.cart_products)
+      setProducts(response.data)
     })
     .catch(function (error) {
       console.log("handle error");
       console.log(error.response.data);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading]);
+  }, [loading,products]);
   return (
     <section className="favorite">
       <div className="container">
@@ -41,12 +40,17 @@ function Favorite() {
 
         <div className="favorite__items">
           <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-4">
-            <Cardfavorite Image={Imgcardone} Title={"فستان برباط أمامى باكمام فانوس بعنق..."} Price={"76.00"}/>
+
+          {loading === false ? ( <Loading/>) :
+            <>
+           {products.map(item=>
+            <div className="col-sm-12 col-md-6 col-lg-4" key={item.product.id}>
+            <Cardfavorite Image={item.product.image} Title={item.product.title} Price={item.product.price} Id={item.product.id}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4">
-            <Cardfavorite Image={Imgcardtwo} Title={"فستان برباط أمامى باكمام فانوس بنق..."} Price={"76.00"}/>
-            </div>
+            
+            )}
+            </>
+            }
           </div>
         </div>
       </div>

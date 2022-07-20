@@ -1,0 +1,30 @@
+.empty-contener{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Cairo;
+    text-align: center;
+    h5{
+        font-family: Cairo;
+        font-size: 30px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    img{
+        width: 96px;
+        height: 96px;
+        object-fit: contain;
+    }
+    p{
+        margin-top: 16px ;
+        font-family: Cairo;
+        font-size: 17px;
+        font-weight: normal;
+        text-align: center;
+        color: #333;
+    }
+}

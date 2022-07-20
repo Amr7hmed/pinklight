@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import Iconshare from "../../images/icon/share.png";
 import Iconwomen from "../../images/icon/women.svg";
@@ -6,10 +7,77 @@ import phone from "../../images/icon/phone.svg";
 import loction from "../../images/icon/loction.svg";
 import cartimg from "../../images/icon/cart.svg";
 import likeimg from "../../images/icon/love.svg";
+import { Api } from "../../api";
+import axios from "axios";
 
 function ProudectContent(props) {
-  const { Title, Price ,colors, brand,status } = props;
+  const { Title, Price ,colors, brand,status ,Sizes , User , Id } = props;
   
+const addToCart = () => {
+  const options = {
+    method: "post",
+    url: `${Api}order/product`,
+    headers: {
+      Accept: "application/json",
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`, 
+    },
+    data: JSON.stringify({
+      "product_id":Id,
+      "count": 1
+    }),
+  };
+  axios(options).then(function (response) {
+    console.log("handle success");
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    if (error.response) {
+      console.log("error");
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+  } else if (error.request) {
+      console.log(error.request);
+  } else {
+      console.log('Error', error.message);
+  }
+  console.log(error.config);
+  });
+
+  
+};
+
+const addToFavourite = () => {
+  const options = {
+    method: "get",
+    url: `${Api}favourite/${Id}`,
+    headers: {
+      Accept: "application/json",
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`, 
+    },
+  };
+  axios(options).then(function (response) {
+    console.log("handle success");
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    if (error.response) {
+      console.log("error");
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+  } else if (error.request) {
+      console.log(error.request);
+  } else {
+      console.log('Error', error.message);
+  }
+  console.log(error.config);
+  });
+
+  
+};
   return (
     <section className="proudect__content">
       <div className="header">
@@ -29,30 +97,30 @@ function ProudectContent(props) {
       <div className="color">
         <span> الألوان المتاحه </span>
         <span className="color-list">
-          <span className="active">أحمر</span> - <span>أسود</span> -{" "}
-          <span>رصاصي</span>
+          {colors.map((item , index) =>
+          <span className="active" key={index}>{item}</span>  
+          )}
         </span>
       </div>
 
       <div className="sizes">
         <span>المقاسات المتاحه</span>
         <span className="sizes-list">
-          <span> XL </span>
-          <span> L </span>
-          <span className="active"> M </span>
-          <span> S </span>
+          {Sizes.map((item , index) =>
+          <span className="active" key={index}>{item}</span>  
+          )}
         </span>
       </div>
 
       <div className="status">
         <div>
           <span> الحاله </span>
-          <span className="item"> جديد </span>
+          <span className="item"> {status}</span>
         </div>
 
         <div>
           <span> الماركه </span>
-          <span className="item"> شى إن </span>
+          <span className="item">{brand}</span>
         </div>
       </div>
 
@@ -60,33 +128,36 @@ function ProudectContent(props) {
         <div className="header">
           <div className="left">
             <img src={Iconwomen} alt="" />
-            <span>ساره سعد</span>
+            <span>{User.name}</span>
           </div>
 
           <div className="righet">
+            
+       <a href={User.email} target="_blank">
             <img src={massegrhet} alt="" />
+        </a>
           </div>
         </div>
 
         <div className="footer">
           <div className="left">
             <img src={phone} alt="" />
-            <span>+966 55 660 0910</span>
+            <span>{User.phone}</span>
           </div>
           <div className="righ">
             <img src={loction} alt="" />
-            <span>الرياض</span>
+            <span>{User.loction === ""? "الرياض":User.loction}</span>
           </div>
         </div>
       </div>
 
       <div className="cart">
-        <button className="btn buttoncart">
+        <button className="btn buttoncart" onClick={() => addToCart()}>
           <img src={cartimg} alt="Cart Icon" />
           <span>إضافه الى عربة التسوق</span>
         </button>
 
-        <button className="btn buttonfaveort">
+        <button className="btn buttonfaveort" onClick={()=>addToFavourite()}>
           <img src={likeimg} alt="Faveort Icon" />
         </button>
       </div>

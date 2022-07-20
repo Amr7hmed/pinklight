@@ -47,16 +47,13 @@ const addToCart = () => {
 
 const addToFavourite = () => {
   const options = {
-    method: "post",
-    url: `${Api}favourite/6`,
+    method: "get",
+    url: `${Api}favourite/${Id}`,
     headers: {
       Accept: "application/json",
       'Content-Type': 'application/json',
       Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`, 
     },
-    data: JSON.stringify({
-      "product_id":Id
-    }),
   };
   axios(options).then(function (response) {
     console.log("handle success");
@@ -115,7 +112,7 @@ const addToFavourite = () => {
             <button className="btn btn-heart" onClick={()=>addToFavourite()}>
               <img src={HeartIcon} alt="" />
             </button>
-            <button className="btn btn-shopping"onClick={() => addToCart()}>
+            <button className="btn btn-shopping" onClick={() => addToCart()}>
               <img src={ShoppinIcon} alt="" />
             </button>
           </div>

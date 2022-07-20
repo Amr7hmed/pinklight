@@ -9,8 +9,6 @@ function Demand(props) {
 
   let Totleprice = newstate.reduce(function (previousValue, currentValue){return previousValue + currentValue});
 
-  console.log(newstate);
-  console.log(Totleprice);
 
   return (
     <section className="cartpage__demand">
