@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Api } from "../../api/index.js";
 
 function Status(props) {
-  const {status , setStatus }=props;
-  
-  const handleChange =  (e) => {
-    const value = e.target.value;
-    const statusarry = new Set([...status]);
-    setStatus([...statusarry, value])
-    console.log(status);
+  const {status,setStatus,Datafilter }=props;
+  const Inputs = document.querySelectorAll('input[name=status]');
+  let newStatus =[];
+
+  const handleChange =  async (e) => {
+   
+   await Inputs.forEach( element => {
+     if(element.checked === true){
+
+       newStatus.push(element.value)
+       setStatus(newStatus)
+
+      }else if(element.checked === false){
+        if(newStatus.length ===0){
+          console.log("no data");
+        }else{
+          console.log(false);
+        }
+    }
+  });
   };
+
 
   return (
     <div className='fillter__status'>
@@ -17,25 +33,25 @@ function Status(props) {
     </div>
         <ul>
           <li>
-            <input type="checkbox" value="جديد" name="status" onChange={handleChange} 
-            checked = {status === "" ? false :  null} id="جديد"/>
-            <label htmlFor="جديد">
-              جديد
+            <input type="checkbox" value={Datafilter.status.new} name="status" onChange={handleChange} 
+            checked = {status === "" ? false :  null} id={Datafilter.status.new}/>
+            <label htmlFor={Datafilter.status.new}>
+              {Datafilter.status.new}
               </label>
           </li>
           <li>
-            <input type="checkbox" value="مستعمل" name="status" onChange={handleChange} 
-            checked = {status === "" ? false :  null} id="مستعمل"/>
-            <label htmlFor="مستعمل">
-            مستعمل
+            <input type="checkbox" value={Datafilter.status.used} name="status" onChange={handleChange} 
+            checked = {status === "" ? false :  null} id={Datafilter.status.used}/>
+            <label htmlFor={Datafilter.status.used}>
+            {Datafilter.status.used}
           </label>
           </li>
           <li>
-            <input type="checkbox" value="تبرع / هديه" name="status" onChange={handleChange} 
-            checked = {status === "" ? false :  null} id="تبرع / هديه"/>
-            <label htmlFor="تبرع / هديه">
-            تبرع / هديه
-          </label>
+            <input type="checkbox" value={Datafilter.status.gift} name="status" onChange={handleChange} 
+            checked = {status === "" ? false :  null} id={Datafilter.status.gift}/>
+            <label htmlFor={Datafilter.status.gift}>
+            {Datafilter.status.gift}
+            </label>
           </li>
         </ul>
     </div>

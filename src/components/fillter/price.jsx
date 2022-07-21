@@ -6,40 +6,19 @@ import removeIcon from "../../images/icon/icon_remove.svg"
 
 
 function Price(props) {
-  const {minValue, set_minValue,maxValue, set_maxValue , setProducts } = props;
+  const {minValue, set_minValue , maxValue, set_maxValue } = props;
 
-  const fetchPost = async (minValue,maxValue) => {
-    const  options = {
-      method: "get",
-      url: `${Api}products?min_price=${minValue}&max_price=${maxValue}`,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
-    };
-    axios(options).then(function (response) {
-     console.log("handle success");
-     //console.log(response.data.products);
-     setProducts(response.data.products)
-    })
-    .catch(function (error) {
-      console.log("handle error");
-      console.log(error.response.data);
-    });
-  };
+
 
 
   const handleInput = async (e) => {
     set_minValue(e.minValue);
     set_maxValue(e.maxValue);
-    fetchPost(minValue,maxValue);
-
   };
 
   const removevalue = ()=>{
     set_minValue(0);
     set_maxValue(1000);
-
   }
   return (
     <div className='fillter__price'>
