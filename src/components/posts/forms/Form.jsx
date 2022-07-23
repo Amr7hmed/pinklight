@@ -1,29 +1,34 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { InputCity, InputName, InputBrand, Inputcolor, InputDes, Inputprice, Inputsize, Inputstatus, InputImages, SalesDetails, InputType } from "./Inputs";
+import { Api } from "../../../api";
+import { InputCity, InputName, InputBrand, InputDes, Inputprice , Inputstatus, SalesDetails, InputType } from "./Inputs";
+import Inputcolor  from "./inputs/Inputcolor.jsx";
+import InputImages from "./inputs/inputimages.jsx";
+import Inputsize from "./inputs/inputsize.jsx";
 
 export default function Form(props) {
-  const { showformdress } = props;
+  const { showformdress ,categoryid } = props;
   const [type, setType] = useState("noselect");
+  const selectedImages = [];
+  const selectedSize =[];
+  const [selectedColors,setSelectedColors] =useState([]);
+
   const [state, setState] = useState({
-    name: "",
+    category_id:categoryid,
+    title: "",
     description: "",
-    stuties: "",
+    product_status: "",
     price: "",
     pricecase: "",
-    color: "",
-    size: "",
     brand: "",
     city: "",
     nameuser: "",
     phoneuser: "",
     signature: "",
-    fill_cover: null,
-    fill_one: null,
-    fill_two: null,
-    fill_three: null,
-    fill_four: null,
-    fill_five: null,
   });
+  const [message, setMessage] = useState("");
+
+
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -34,18 +39,47 @@ export default function Form(props) {
     });
   };
 
-
-
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
-    console.log(type);
+    const options = {
+      method: "post",
+      url: `${Api}ads`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        sub_category_id:type,
+      ...state,
+      images:selectedImages,
+      colors:selectedColors,
+      sizes:selectedSize,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      console.log(response.data.message)
+    })
+    .catch(function (error) {
+      if (error.response) {
+        console.log(error.response.data);
+        setMessage(error.response.data.message)
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        console.log(error.request);
+    } else {
+        console.log('Error', error.message);
+    }
+    console.log(error.config);
+    });
   };
 
   return (
     <section className="post__form">
 
-      <form onSubmit={handleSubmit}>
+      <form>
         <InputType type={type} setType={setType} />
         <div className="post__details">
           <div className="header">
@@ -61,19 +95,46 @@ export default function Form(props) {
 
             <Inputprice handleChange={handleChange} />
 
-            <Inputcolor handleChange={handleChange} />
-            {showformdress === false ? " " : <Inputsize handleChange={handleChange} />}
+            <Inputcolor selectedColors={selectedColors} setSelectedColors={setSelectedColors}/>
+            {showformdress === false ? " " : <Inputsize selectedSize={selectedSize} />}
 
             <InputBrand handleChange={handleChange} />
 
             <InputCity handleChange={handleChange} />
 
-            <InputImages handleChange={handleChange} />
+            <InputImages selectedImages={selectedImages}  />
           </div>
         </div>
         <SalesDetails handleChange={handleChange} />
-        <button className="btn" type="submit">نشر الاعلان</button>
+              <span className="errorfiled">{message}</span>
+        <button className="btn"  type="button"  onClick={handleSubmit}>نشر الاعلان</button>
       </form>
     </section>
   );
 }
+
+/*
+  const onFileChange2 = (event) => {
+    // let images = [];
+
+    // Update the state
+
+    setSelectedFiles(event.target.files);
+
+    console.log("images3", selectedFiles);
+  };
+
+
+    for (let i = 0; i < selectedFiles.length; i++) {
+      formDataa.append("images[]", selectedFiles[i]);
+      console.log(selectedFiles[i]);
+    }
+
+    
+    if (selectedFiles) {
+      var images = [];
+
+      for (let i = 0; i < selectedFiles.length; i++) {
+        images.push(selectedFiles[i]);
+      }
+*/

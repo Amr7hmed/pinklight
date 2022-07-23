@@ -1,31 +1,27 @@
 import React from "react";
-import InputImgUpload from "../../../images/icon/img-upload.svg";
-
-
 
 export function InputType(props) {
-  const {type,setType}  = props;
-  
+  const { type, setType } = props;
+
   const handleVlaue = (e) => {
     const value = e.target.value;
     setType(value);
   };
   return (
     <div className="form-group selectbox">
-    <label>اختر الفئه الفرعيه</label>
-    <select className="form-control"
-      value={type}
-      onChange={handleVlaue} >
-      <option value="noselect">النوع </option>
-      <option value="one">النوع الاول</option>
-      <option value="two">النوع الثاني</option>
-      <option value="three">النوع الثالث</option>
-    </select>
-  </div>
-  
+      <label>اختر الفئه الفرعيه</label>
+      <select className="form-control"
+        value={type}
+        onChange={handleVlaue} >
+        <option value="noselect">النوع </option>
+        <option value="one">النوع الاول</option>
+        <option value="two">النوع الثاني</option>
+        <option value="three">النوع الثالث</option>
+      </select>
+    </div>
+
   );
 }
-
 
 export function InputName(props) {
   const { handleChange } = props;
@@ -35,7 +31,7 @@ export function InputName(props) {
       type="text"
       className="form-control"
       placeholder="اكتب هنا اسم مميز للمنتج الذى تريد بيعه"
-      name="name"
+      name="title"
       onChange={handleChange} />
   </div>);
 }
@@ -69,7 +65,7 @@ export function Inputstatus(props) {
             className="form-check-input"
             type="radio"
             id="inlineCheckbox1"
-            name="stuties"
+            name="product_status"
             value="new"
             onChange={handleChange} />
           جديد
@@ -80,7 +76,7 @@ export function Inputstatus(props) {
             className="form-check-input"
             type="radio"
             id="inlineCheckbox2"
-            name="stuties"
+            name="product_status"
             value="used"
             onChange={handleChange} />
           مستعمل
@@ -91,7 +87,7 @@ export function Inputstatus(props) {
             className="form-check-input"
             type="radio"
             id="inlineCheckbox3"
-            name="stuties"
+            name="product_status"
             value="gift"
             onChange={handleChange} />
           هديه / تبرع
@@ -142,90 +138,6 @@ export function Inputprice(props) {
   );
 }
 
-export function Inputcolor(props) {
-  const { handleChange } = props;
-  return (<div className="form-group">
-    <label>الألوان المتاحه</label>
-    <div className="price">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="أحمر - أزرق - أسود"
-        name="color"
-        onChange={handleChange} />
-    </div>
-  </div>
-
-  );
-}
-
-export function Inputsize(props) {
-  const { handleChange } = props;
-  return (
-    <div className="form-group">
-      <label> المقاسات المتاحه</label>
-      <div className="size">
-        <span>
-          <input
-            className="form-check-input"
-            type="radio"
-            id="inlineRadio1"
-            defaultValue="option1"
-            name="size"
-            value="small"
-            onChange={handleChange} />
-          <label className="form-check-label" htmlFor="inlineRadio1">
-            S
-          </label>
-        </span>
-
-        <span>
-          <input
-            className="form-check-input"
-            type="radio"
-            id="inlineRadio2"
-            defaultValue="option2"
-            name="size"
-            value="medium"
-            onChange={handleChange} />
-          <label className="form-check-label" htmlFor="inlineRadio2">
-            M
-          </label>
-        </span>
-
-        <span>
-          <input
-            className="form-check-input"
-            type="radio"
-            id="inlineRadio2"
-            defaultValue="option2"
-            name="size"
-            value="large"
-            onChange={handleChange} />
-          <label className="form-check-label" htmlFor="inlineRadio2">
-            L
-          </label>
-        </span>
-
-        <span>
-          <input
-            className="form-check-input"
-            type="radio"
-            id="inlineRadio2"
-            defaultValue="option2"
-            name="size"
-            value="x-large"
-            onChange={handleChange} />
-          <label className="form-check-label" htmlFor="inlineRadio2">
-            XL
-          </label>
-        </span>
-      </div>
-    </div>
-
-  );
-}
-
 
 export function InputBrand(props) {
   const { handleChange } = props;
@@ -258,66 +170,6 @@ export function InputCity(props) {
   );
 }
 
-export function InputImages(props) {
-  const { handleChange } = props;
-  return (
-    <div className="form-proudect">
-      <h6>تحميل صور المنتج </h6>
-      <div className="form-proudect_imgs">
-        <div className="left">
-          <div className="item">
-            <span><img src={InputImgUpload} alt="" />
-              <input type="file" 
-            name="fill_one"
-            onChange={handleChange} />
-            </span>
-          </div>
-          <div className="item">
-            <span><img src={InputImgUpload} alt="" />
-              <input type="file" 
-            name="fill_two"
-            onChange={handleChange} />
-            </span>
-          </div>
-          <div className="item">
-            <span><img src={InputImgUpload} alt="" />
-              <input type="file" 
-            name="fill_three"
-            onChange={handleChange} />
-            </span>
-          </div>
-          <div className="item">
-            <span><img src={InputImgUpload} alt="" />
-              <input type="file" 
-            name="fill_four"
-            onChange={handleChange} />
-            </span>
-          </div>
-          <div className="item">
-            <span><img src={InputImgUpload} alt="" />
-              <input type="file" 
-            name="fill_five"
-            onChange={handleChange} />
-            </span>
-          </div>
-        </div>
-        <div className="righet">
-          <div className="righet-img">
-            <img src={InputImgUpload} alt="" />
-
-            <span>
-              يمكنك تحميل واجهة الإعلان هنا
-            </span>
-            <input 
-            type="file" 
-            name="fill_cover"
-            onChange={handleChange} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export function SalesDetails(props) {
   const { handleChange } = props;

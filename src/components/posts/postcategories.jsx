@@ -6,18 +6,20 @@ import dress from "../../images/categories/dress.svg";
 import other from "../../images/categories/other.png";
 
 function PostCategories(props) {
-  const { setShowformdress } = props;
+  const { setShowformdress , setCategoryid} = props;
   const [classshow , setClassshow] = useState("showbuttondrees");
 
-  const ShowInputSize = () => {
+  const ShowInputSize = (e) => {
     setShowformdress(true);
     setClassshow("showbuttondrees");
+    setCategoryid(e.target.id);
   };
   const HideInputSize = (e) => {
     const value = e.target.name;
     setShowformdress(false)
     setClassshow(value)
     console.log(value);
+    setCategoryid(e.target.id);
   };
 
   return (
@@ -27,25 +29,25 @@ function PostCategories(props) {
       <div className="post__categories__items">
         <button className={classshow === "showbuttondrees" ?
         "showbuttondrees btn item" : "btn item"} 
-        onClick={ShowInputSize} >
+        onClick={ShowInputSize}  id="1">
           <img src={dress} alt="accessories" />
           <span>فساتين</span>
         </button>
         <button onClick={HideInputSize} name="showbuttonbag" 
           className={classshow === "showbuttonbag" ?
-        "showbuttonbag btn item" : "btn item"} >
+        "showbuttonbag btn item" : "btn item"} id="2">
           <img src={bag} alt="accessories" />
           <span>حقائب</span>
         </button>
         <button onClick={HideInputSize} name="showbuttonaccessories"
           className={classshow === "showbuttonaccessories" ?
-        "showbuttonaccessories btn item" : "btn item"} >
+        "showbuttonaccessories btn item" : "btn item"} id="3">
           <img src={accessories} alt="accessories" />
           <span>أكسسوارات</span>
         </button>
         <button onClick={HideInputSize}  name="showbuttonother"
           className={classshow === "showbuttonother" ?
-        "showbuttonother btn item" : "btn item"} >
+        "showbuttonother btn item" : "btn item"} id="4">
           <img src={other} alt="accessories" width={"60px"} height={"60px"}/>
           <span>أخرى</span>
         </button>
