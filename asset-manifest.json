@@ -1,16 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.145c6f72.css",
-    "main.js": "/static/js/main.43f19bcc.js",
+    "main.css": "/static/css/main.0d00329b.css",
+    "main.js": "/static/js/main.659b954f.js",
     "static/js/787.a2ad9c27.chunk.js": "/static/js/787.a2ad9c27.chunk.js",
     "static/media/offers.png": "/static/media/offers.3edf3428de3cef723d4f.png",
     "static/media/slider.png": "/static/media/slider.dcd06cb537fa01daac49.png",
-    "static/media/img-8.png": "/static/media/img-8.b83e32c42fa673f6f025.png",
-    "static/media/img-2.png": "/static/media/img-2.64c34bda547338c6e42a.png",
-    "static/media/img-9.png": "/static/media/img-9.9dc47707872e839bc5cf.png",
     "static/media/img-7.png": "/static/media/img-7.5e21362471d2a861fac8.png",
-    "static/media/img-11.png": "/static/media/img-11.5ed72284b1eff0af70f9.png",
-    "static/media/img-10.png": "/static/media/img-10.225631d6538f3207ac74.png",
     "static/media/img-7.webp": "/static/media/img-7.f28fd54428255b036d1a.webp",
     "static/media/logo.png": "/static/media/logo.77e38598887c3ef476d1.png",
     "static/media/shipping.svg": "/static/media/shipping.7517c6537e358982b3b3fb6d25caff99.svg",
@@ -42,12 +37,12 @@
     "static/media/chevron-left-solid.svg": "/static/media/chevron-left-solid.7cbb7b474d7a0a1474cbb1a8d040e167.svg",
     "static/media/facebook-f-brands.svg": "/static/media/facebook-f-brands.8adca75361b744d17bbeb17b9c804d9d.svg",
     "static/media/shopping-bag_icon.svg": "/static/media/shopping-bag_icon.6f5febcdeaca63a978dd3d06cbdb8c8f.svg",
-    "main.145c6f72.css.map": "/static/css/main.145c6f72.css.map",
-    "main.43f19bcc.js.map": "/static/js/main.43f19bcc.js.map",
+    "main.0d00329b.css.map": "/static/css/main.0d00329b.css.map",
+    "main.659b954f.js.map": "/static/js/main.659b954f.js.map",
     "787.a2ad9c27.chunk.js.map": "/static/js/787.a2ad9c27.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.145c6f72.css",
-    "static/js/main.43f19bcc.js"
+    "static/css/main.0d00329b.css",
+    "static/js/main.659b954f.js"
   ]
 }
