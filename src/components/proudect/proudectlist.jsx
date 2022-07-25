@@ -1,12 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import CardProudect from '../home/cardproudect';
-import Image1 from "../../images/products/img-2.png";
-import Image2 from "../../images/products/img-7.png";
-import Image3 from "../../images/products/img-8.png";
-import Image4 from "../../images/products/img-9.png";
-import Image5 from "../../images/products/img-10.png";
-import Image6 from "../../images/products/img-11.png";
 
 function Proudectlist(props) {
   const {Similarproducts}=props;

@@ -18,18 +18,27 @@ function Navbar() {
               <div className="navbar__icons">
                 {localStorage.getItem("token") === null ?<Iconlogin/>: <Iconprofile/>}
 
+
+                {localStorage.getItem("token") === null ?
+                "": 
+                <>
                 <NavLink to="/favorite">
                   <img src={Heart} alt="heart" />
                 </NavLink>
                 <NavLink to="/cart">
                   <img src={Shopping} alt="shopping" />
                 </NavLink>
+                </>}
               </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
-              <div className="navbar__advertisement">
-                <Navpost/>
-              </div>
+
+              
+            {localStorage.getItem("token") === null ?
+                "": 
+                <div className="navbar__advertisement">
+                  <Navpost/>
+                </div>}
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__logo">

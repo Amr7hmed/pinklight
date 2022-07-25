@@ -17,7 +17,7 @@ function City(props) {
         <ul>
           {Datafilter.cities.map((item,index) => 
           <li key={index}>
-            <input type="radio" value={item.city} name="city" onChange={handleChange} id={item.city}/>
+            <input type="radio" value={item.city} name="filter" onChange={handleChange} id={item.city}/>
             <label htmlFor={item.city}>
             {item.city}
             </label>

@@ -19,7 +19,7 @@ function Brands(props) {
         <ul>
           {Datafilter.brands.map((item,index) => 
           <li key={index}>
-            <input type="radio" value={item.brand} name="brands" onChange={handleChange}  id={item.brand}/>
+            <input type="radio" value={item.brand} name="filter" onChange={handleChange}  id={item.brand}/>
             <label htmlFor={item.brand}>
             {item.brand}
             </label>

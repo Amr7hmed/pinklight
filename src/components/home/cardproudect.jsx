@@ -108,14 +108,19 @@ const addToFavourite = () => {
           <NavLink to={`/proudect/${Id}`} onClick={scrollToTop}>
           <img src={Image} alt="Proudect" />
           </NavLink>
-          <div className="card_hover">
-            <button className="btn btn-heart" onClick={()=>addToFavourite()}>
-              <img src={HeartIcon} alt="" />
-            </button>
-            <button className="btn btn-shopping" onClick={() => addToCart()}>
-              <img src={ShoppinIcon} alt="" />
-            </button>
-          </div>
+          
+            {localStorage.getItem("token") === null ?
+                "": 
+                <div className="card_hover">
+                  <button className="btn btn-heart" onClick={()=>addToFavourite()}>
+                    <img src={HeartIcon} alt="" />
+                  </button>
+                  <button className="btn btn-shopping" onClick={() => addToCart()}>
+                    <img src={ShoppinIcon} alt="" />
+                  </button>
+                </div>
+                
+                }
         </div>
 
         <div className="content">

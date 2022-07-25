@@ -23,7 +23,7 @@ function Categories(props) {
               <button className="accordion-button collapsed" type="button"
                 data-bs-toggle="collapse" data-bs-target={`#${item.name}`} aria-expanded="false" aria-controls={item.name}>
 
-                <input type="radio" value={item.name} name="categories" id={item.id} onChange={handleChange}
+                <input type="radio" value={item.name} name="filter" id={item.id} onChange={handleChange}
                 />
                 <label htmlFor={item.name_ar}>{item.name_ar}</label>
               </button>
@@ -34,7 +34,7 @@ function Categories(props) {
                 <div className="accordion-body">
                   <ul>
                     <li>
-                      <input type="radio" value={elment.name} name="sub_categories" onChange={handleChange}
+                      <input type="radio" value={elment.name} name="sub_filter" onChange={handleChange}
                         id={elment.id} />
                       <label htmlFor={elment.name_ar}>
                         {elment.name_ar}

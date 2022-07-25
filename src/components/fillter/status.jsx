@@ -17,21 +17,21 @@ function Status(props) {
     </div>
         <ul>
           <li>
-            <input type="radio" value={Datafilter.status.new} name="status" onChange={handleChange} 
+            <input type="radio" value={Datafilter.status.new} name="filter" onChange={handleChange} 
              id="new"/>
             <label htmlFor={Datafilter.status.new}>
               {Datafilter.status.new}
               </label>
           </li>
           <li>
-            <input type="radio" value={Datafilter.status.used} name="status" onChange={handleChange} 
+            <input type="radio" value={Datafilter.status.used} name="filter" onChange={handleChange} 
              id="used"/>
             <label htmlFor={Datafilter.status.used}>
             {Datafilter.status.used}
           </label>
           </li>
           <li>
-            <input type="radio" value={Datafilter.status.gift} name="status" onChange={handleChange} 
+            <input type="radio" value={Datafilter.status.gift} name="filter" onChange={handleChange} 
              id="gift"/>
             <label htmlFor={Datafilter.status.gift}>
             {Datafilter.status.gift}

@@ -15,7 +15,6 @@ function Proudects() {
   const [perpage, setPerpage] = useState();
   // Git Filter Data Items
   const [datafilter, setDatafilter] = useState([]);
-  const [showFilter, setShowFilter] = useState(false);
 
   const  options = {
     method: "get",
