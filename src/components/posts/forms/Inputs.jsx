@@ -14,7 +14,7 @@ export function InputType(props) {
         value={type}
         onChange={handleVlaue} >
         <option value="noselect">النوع </option>
-        <option value="one">النوع الاول</option>
+        <option value="7">النوع الاول</option>
         <option value="two">النوع الثاني</option>
         <option value="three">النوع الثالث</option>
       </select>

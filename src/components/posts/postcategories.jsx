@@ -29,7 +29,7 @@ function PostCategories(props) {
       <div className="post__categories__items">
         <button className={classshow === "showbuttondrees" ?
         "showbuttondrees btn item" : "btn item"} 
-        onClick={ShowInputSize}  id="1">
+        onClick={ShowInputSize}  id="3">
           <img src={dress} alt="accessories" />
           <span>فساتين</span>
         </button>
@@ -41,7 +41,7 @@ function PostCategories(props) {
         </button>
         <button onClick={HideInputSize} name="showbuttonaccessories"
           className={classshow === "showbuttonaccessories" ?
-        "showbuttonaccessories btn item" : "btn item"} id="3">
+        "showbuttonaccessories btn item" : "btn item"} id="1">
           <img src={accessories} alt="accessories" />
           <span>أكسسوارات</span>
         </button>

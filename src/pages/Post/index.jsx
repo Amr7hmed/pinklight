@@ -5,7 +5,7 @@ import Form from "../../components/posts/forms/Form.jsx";
 
 function Posts() {
   const [showformdress, setShowformdress] = useState(true);
-  const [categoryid , setCategoryid]=useState(1);
+  const [categoryid , setCategoryid]=useState(3);
 
   return (
     <section className="post">

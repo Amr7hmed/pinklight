@@ -36,8 +36,7 @@
 
     &__card {
         width: 260px;
-        margin: 0px auto;
-        margin-bottom: 50px;
+        margin: 0px auto 50px auto;
         direction: rtl;
         display: inline-block;
         
@@ -173,5 +172,9 @@
             }
             }
         }
+    }
+
+    &_row{
+        position: relative;
     }
 }

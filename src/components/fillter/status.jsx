@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Api } from "../../api/index.js";
+import React from "react";
+import { FilterDataStatus } from "../../api/actions.js";
 
 function Status(props) {
-  const {status,setStatus,Datafilter }=props;
-  const Inputs = document.querySelectorAll('input[name=status]');
-  let newStatus =[];
+  const { Datafilter, setProducts, setPerpage } = props;
 
-  const handleChange =  async (e) => {
-   
-   await Inputs.forEach( element => {
-     if(element.checked === true){
-
-       newStatus.push(element.value)
-       setStatus(newStatus)
-
-      }else if(element.checked === false){
-        if(newStatus.length ===0){
-          console.log("no data");
-        }else{
-          console.log(false);
-        }
-    }
-  });
+  const handleChange = (e) => {
+    const value = e.target.id;
+    FilterDataStatus(setPerpage, setProducts, value)
   };
 
 
@@ -33,22 +17,22 @@ function Status(props) {
     </div>
         <ul>
           <li>
-            <input type="checkbox" value={Datafilter.status.new} name="status" onChange={handleChange} 
-            checked = {status === "" ? false :  null} id={Datafilter.status.new}/>
+            <input type="radio" value={Datafilter.status.new} name="status" onChange={handleChange} 
+             id="new"/>
             <label htmlFor={Datafilter.status.new}>
               {Datafilter.status.new}
               </label>
           </li>
           <li>
-            <input type="checkbox" value={Datafilter.status.used} name="status" onChange={handleChange} 
-            checked = {status === "" ? false :  null} id={Datafilter.status.used}/>
+            <input type="radio" value={Datafilter.status.used} name="status" onChange={handleChange} 
+             id="used"/>
             <label htmlFor={Datafilter.status.used}>
             {Datafilter.status.used}
           </label>
           </li>
           <li>
-            <input type="checkbox" value={Datafilter.status.gift} name="status" onChange={handleChange} 
-            checked = {status === "" ? false :  null} id={Datafilter.status.gift}/>
+            <input type="radio" value={Datafilter.status.gift} name="status" onChange={handleChange} 
+             id="gift"/>
             <label htmlFor={Datafilter.status.gift}>
             {Datafilter.status.gift}
             </label>

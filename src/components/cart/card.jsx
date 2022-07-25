@@ -71,6 +71,7 @@ function CartCard(props) {
         console.log(error.config);
       });
   };
+  
   const increase = () => {
     setCounternumber(count => count + 1);
     handleSubmit("increase");

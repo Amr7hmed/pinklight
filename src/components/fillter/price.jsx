@@ -1,19 +1,19 @@
-import React from 'react';
-import axios from "axios";
-import { Api } from "../../api/index.js";
+import React, { useState } from "react";
 import MultiRangeSlider from "multi-range-slider-react";
 import removeIcon from "../../images/icon/icon_remove.svg"
+import { FilterDataPrice } from "../../api/actions.js";
 
 
 function Price(props) {
-  const {minValue, set_minValue , maxValue, set_maxValue } = props;
+  const {setProducts, setPerpage } = props;
 
-
-
+  const [minValue, set_minValue] = useState(0);
+  const [maxValue, set_maxValue] = useState(1000);
 
   const handleInput = async (e) => {
     set_minValue(e.minValue);
     set_maxValue(e.maxValue);
+    FilterDataPrice(setPerpage,setProducts,e.minValue,e.maxValue);
   };
 
   const removevalue = ()=>{

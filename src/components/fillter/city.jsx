@@ -1,25 +1,14 @@
-import React from 'react';
-import axios from "axios";
-import { Api } from "../../api/index.js";
+import React from "react";
+import { FilterDataCity } from "../../api/actions.js";
 
 function City(props) {
-  const {city , setCity ,Datafilter }=props;
-  const Inputs = document.querySelectorAll('input[name=city]');
-  let newCity =[];
+  const { Datafilter, setProducts, setPerpage } = props;
 
-
-  const handleChange =  async (e) => {
-    
-    await Inputs.forEach( element => {
-      if(element.checked === true){
-        newCity.push(element.value)
-        setCity(newCity)
-       }else if(element.checked === false){
-       console.log(false);
-     }
-   });
- 
-   };
+  const handleChange = (e) => {
+    const value = e.target.id;
+    FilterDataCity(setPerpage, setProducts, value)
+  };
+  
   return (
     <div className='fillter__city'>
     <div className="title">
@@ -28,8 +17,7 @@ function City(props) {
         <ul>
           {Datafilter.cities.map((item,index) => 
           <li key={index}>
-            <input type="checkbox" value={item.city} name="city" onChange={handleChange} 
-            checked = {city === "" ? false :  null} id={item.city}/>
+            <input type="radio" value={item.city} name="city" onChange={handleChange} id={item.city}/>
             <label htmlFor={item.city}>
             {item.city}
             </label>
