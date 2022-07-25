@@ -69,14 +69,14 @@
       position: relative;
       width: 265px;
       height: 140px;
-      margin-bottom: -35px;
       background-image: url("../../images/layout/categories.svg");
       background-repeat: no-repeat;
+      background-position: center;
 
       span {
         position: absolute;
-        top: 5px;
-        left: 18%;
+        top: 25px;
+        left: 34%;
         font-size: 30px;
         font-weight: bold;
         color: #fff;
@@ -422,11 +422,10 @@
         width: 40%;
         height: 140px;
         margin: 0px auto;
-        margin-bottom: -25px;
 
         span {
-          top: 6px;
-          left: 16%;
+          top: 25px;
+          left: 34%;
         }
       }
 
@@ -535,7 +534,6 @@
     &__categories {
       .header {
         width: 270px;
-        margin: inherit;
       }
     }
 
