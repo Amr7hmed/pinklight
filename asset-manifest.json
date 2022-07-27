@@ -1,12 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.044ea288.css",
-    "main.js": "/static/js/main.8148f5e4.js",
+    "main.js": "/static/js/main.9282b8ce.js",
     "static/js/787.a2ad9c27.chunk.js": "/static/js/787.a2ad9c27.chunk.js",
     "static/media/offers.png": "/static/media/offers.3edf3428de3cef723d4f.png",
     "static/media/slider.png": "/static/media/slider.dcd06cb537fa01daac49.png",
-    "static/media/img-7.png": "/static/media/img-7.5e21362471d2a861fac8.png",
-    "static/media/img-7.webp": "/static/media/img-7.f28fd54428255b036d1a.webp",
     "static/media/logo.png": "/static/media/logo.77e38598887c3ef476d1.png",
     "static/media/shipping.svg": "/static/media/shipping.7517c6537e358982b3b3fb6d25caff99.svg",
     "static/media/women.svg": "/static/media/women.2e84695283fead8f668a691723d1c854.svg",
@@ -38,11 +36,11 @@
     "static/media/facebook-f-brands.svg": "/static/media/facebook-f-brands.8adca75361b744d17bbeb17b9c804d9d.svg",
     "static/media/shopping-bag_icon.svg": "/static/media/shopping-bag_icon.6f5febcdeaca63a978dd3d06cbdb8c8f.svg",
     "main.044ea288.css.map": "/static/css/main.044ea288.css.map",
-    "main.8148f5e4.js.map": "/static/js/main.8148f5e4.js.map",
+    "main.9282b8ce.js.map": "/static/js/main.9282b8ce.js.map",
     "787.a2ad9c27.chunk.js.map": "/static/js/787.a2ad9c27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.044ea288.css",
-    "static/js/main.8148f5e4.js"
+    "static/js/main.9282b8ce.js"
   ]
 }
