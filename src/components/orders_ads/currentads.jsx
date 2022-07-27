@@ -1,18 +1,24 @@
+import axios from 'axios';
 import React from 'react';
+import { Api } from '../../api';
 import Carditem from './Card';
-import Imgcard from "../../images/product/img-7.webp";
 
 function Currentads(props) {
-  const Price = 76.00;
-  const {ShowCurrentadsitem}=props;
-  return (<div className={ShowCurrentadsitem}>
-
-    <Carditem Image={Imgcard} 
-      Title={"فستان برباط أمامى باكمام فانوس بعنق مربع"}
-      Price={Price}
-      Color={"متعدد الالوان"}
-      Size={"M"}
-        />
+  const {Products}=props;
+  
+ 
+  return (<div>
+{Products.map(item =>
+    <Carditem Image={item.images[0]} 
+    Title={item.title}
+      Price={item.price}
+      Color={item.colors}
+      Size={item.sizes}
+      key={item.id}
+      Status={item.ads_status}
+      Id={item.id}
+      />
+      )}
       </div>
   )
 }

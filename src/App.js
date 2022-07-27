@@ -15,6 +15,7 @@ import Mynotifications from './pages/Notifications/index.jsx';
 import MyAds from './pages/Ads/index.jsx';
 import Massages from './pages/Massages/index.jsx';
 import Proudects from './pages/Proudects/index.jsx';
+import Edaitads from './components/orders_ads/Edaitads.jsx';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/myorders" element={<Myorders/>} exact/>
             <Route path="/mynotifications" element={<Mynotifications/>} exact/>
             <Route path="/myads" element={<MyAds/>} exact/>
+            <Route path="/edaitads/:id" element={<Edaitads/>} exact/>
             <Route path="/mymassages" element={<Massages/>} exact/>
             
             

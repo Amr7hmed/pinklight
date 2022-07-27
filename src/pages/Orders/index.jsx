@@ -11,6 +11,7 @@ function Myorders() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [orderid , setOrderid]=useState("");
+  const [iditem , setIdeitem]=useState("");
 
   useEffect(() => {
     const options = {
@@ -27,6 +28,7 @@ function Myorders() {
       console.log("handle success");
       console.log(response);
       setOrderid(response.data.orders[0].id)
+      setIdeitem(response.data.orders[0].orderProducts.id)
       setProducts(response.data.orders[0].orderProducts)
     })
       .catch(function (error) {
@@ -37,6 +39,39 @@ function Myorders() {
   }, [loading]);
 
 
+  
+
+  const deleteCart = () => {
+    const options = {
+      method: "delete",
+      url: `${Api}order/${orderid}`,
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+      data: JSON.stringify({
+        "id":iditem,
+      }),
+    };
+    axios(options).then(function (response) {
+      console.log("handle success");
+      console.log(response)
+      setLoading(false)
+    })
+      .catch(function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      });
+  };
   return (
     <section className="profile__myorders">
       <div className="container">
@@ -63,7 +98,7 @@ function Myorders() {
                     HideEdite={HideEdite}
                     key={item.id}
                     Id={item.id}
-                    Orderid={orderid}
+                    DeleteItem={deleteCart}
                     setLoading={setLoading}
                   />
                 )}

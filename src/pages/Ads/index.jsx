@@ -2,14 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Api } from "../../api";
 import Currentads from "../../components/orders_ads/currentads";
-import Pendingads from "../../components/orders_ads/pendingads";
 import Loading from "../../layout/loading/loading";
 
 function MyAds() {
-  const [Activebutton, setActivebutton] = useState("activebutton");
-  const [notActivebutton, setnotActivebutton] = useState("notactivebutton");
-  const [ShowCurrentadsitem, setShowCurrentadsitem] = useState("show");
-  const [ShowPendingitem, setShowPendingitem] = useState("hide");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -26,29 +21,17 @@ function MyAds() {
     axios(options).then(function (response) {
       setLoading(true);
       console.log("handle success");
-      console.log(response.data);
-      setProducts(response.data)
+      console.log(response.data.adses);
+      setProducts(response.data.adses)
     })
       .catch(function (error) {
+        setLoading(true);
         console.log("handle error");
         console.log(error.response.data);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const ShowCurrentads = () => {
-    setnotActivebutton("notactivebutton");
-    setActivebutton("activebutton");
-    setShowCurrentadsitem("show");
-    setShowPendingitem("hide");
-  }
-
-  const ShowPendingads = () => {
-    setnotActivebutton("activebutton");
-    setActivebutton("notactivebutton");
-    setShowCurrentadsitem("hide");
-    setShowPendingitem("show");
-  }
 
 
   return (
@@ -59,24 +42,13 @@ function MyAds() {
         </div>
 
         <div className="profile__content">
-          <div className="myads__list">
-            <ul>
-              <li>
-                <button className={"btn " + Activebutton} onClick={() => ShowCurrentads()}>إعلاناتى الحاليه</button>
-              </li>
-              <li>
-                <button className={"btn " + notActivebutton} onClick={() => ShowPendingads()}>إعلاناتى المعلقه</button>
-              </li>
-            </ul>
-          </div>
 
           <>
             {loading === false ? (
               <Loading />
             ) : (
               <div className="myads__items">
-                <Currentads ShowCurrentadsitem={ShowCurrentadsitem} />
-                <Pendingads ShowPendingitem={ShowPendingitem} />
+                <Currentads Products={products}/>
               </div>
             )}
           </>
