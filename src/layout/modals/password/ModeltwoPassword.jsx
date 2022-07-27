@@ -72,7 +72,7 @@ props.setCode(state.code);
             نسيت كلمة المرور
           </h5>
           <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف/ البريد الإلكترونى
@@ -99,12 +99,12 @@ props.setCode(state.code);
                   value={state.code || ''}
                   onChange={handleChange}
                 />
-                <button className="btn send" type="submit">أرسال</button>
+                <button className="btn send"  type="button" onClick={handleSubmit}>أرسال</button>
               </div>
               <span className="errorfiled">{message}</span>
 
               <div className="modal-footer">
-                <button 
+                <button  type="button"
                 className={toggole ===false?"btn button-login button-disabled":"btn button-login button-active"}
                 data-bs-target={toggole ===false?" ":"#exampleModalToggle4"}
               data-bs-toggle="modal">المتابعه</button>

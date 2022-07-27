@@ -1,20 +1,20 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Api } from "../../../api";
-import { InputCity, InputName, InputBrand, InputDes, Inputprice , Inputstatus, SalesDetails, InputType } from "./Inputs";
+import { InputCity, InputName, InputBrand, InputDes, Inputprice , Inputstatus, SalesDetails, InputType, InputSubType } from "./inputs/Inputs";
 import Inputcolor  from "./inputs/Inputcolor.jsx";
 import InputImages from "./inputs/inputimages.jsx";
 import Inputsize from "./inputs/inputsize.jsx";
 
 export default function Form(props) {
-  const { showformdress ,categoryid } = props;
-  const [type, setType] = useState("noselect");
-  const selectedImages = [];
-  const selectedSize =[];
+  const { showformdress  ,Data} = props;
+  const [type, setType] = useState("");
+  const [subtype, setSubType] = useState("");
   const [selectedColors,setSelectedColors] =useState([]);
+  const [sizes, setSizes] = useState([]);
+  const [images, setImages] = useState([]);
 
   const [state, setState] = useState({
-    category_id:categoryid,
     title: "",
     description: "",
     product_status: "",
@@ -22,9 +22,9 @@ export default function Form(props) {
     pricecase: "",
     brand: "",
     city: "",
-    nameuser: "",
-    phoneuser: "",
-    signature: "",
+    display_phone: "",
+    display_name: "",
+    display_location:"",
   });
   const [message, setMessage] = useState("");
 
@@ -35,7 +35,6 @@ export default function Form(props) {
     setState({
       ...state,
       [e.target.name]: value,
-
     });
   };
 
@@ -50,11 +49,12 @@ const handleSubmit = (e) => {
         Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data: JSON.stringify({
-        sub_category_id:type,
-      ...state,
-      images:selectedImages,
+        category_id:type,
+        sub_category_id:subtype,
+        images:images,
       colors:selectedColors,
-      sizes:selectedSize,
+      sizes:sizes,
+        ...state,
       }),
     };
     axios(options).then(function (response) {
@@ -62,6 +62,7 @@ const handleSubmit = (e) => {
       console.log(response.data.message)
     })
     .catch(function (error) {
+
       if (error.response) {
         console.log(error.response.data);
         setMessage(error.response.data.message)
@@ -74,13 +75,16 @@ const handleSubmit = (e) => {
     }
     console.log(error.config);
     });
+
   };
 
   return (
     <section className="post__form">
 
       <form>
-        <InputType type={type} setType={setType} />
+        <InputType type={type} setType={setType}  Data={Data}  handleChange={handleChange}/>
+
+        <InputSubType subtype={subtype} setSubType={setSubType} Data={Data}/>
         <div className="post__details">
           <div className="header">
             <h2>تفاصيل الأعلان</h2>
@@ -96,13 +100,14 @@ const handleSubmit = (e) => {
             <Inputprice handleChange={handleChange} />
 
             <Inputcolor selectedColors={selectedColors} setSelectedColors={setSelectedColors}/>
-            {showformdress === false ? " " : <Inputsize selectedSize={selectedSize} />}
+
+            {showformdress === false ? " " : <Inputsize sizes={sizes} setSizes={setSizes} />}
 
             <InputBrand handleChange={handleChange} />
 
             <InputCity handleChange={handleChange} />
 
-            <InputImages selectedImages={selectedImages}  />
+            <InputImages images={images} setImages={setImages} />
           </div>
         </div>
         <SalesDetails handleChange={handleChange} />
@@ -112,29 +117,3 @@ const handleSubmit = (e) => {
     </section>
   );
 }
-
-/*
-  const onFileChange2 = (event) => {
-    // let images = [];
-
-    // Update the state
-
-    setSelectedFiles(event.target.files);
-
-    console.log("images3", selectedFiles);
-  };
-
-
-    for (let i = 0; i < selectedFiles.length; i++) {
-      formDataa.append("images[]", selectedFiles[i]);
-      console.log(selectedFiles[i]);
-    }
-
-    
-    if (selectedFiles) {
-      var images = [];
-
-      for (let i = 0; i < selectedFiles.length; i++) {
-        images.push(selectedFiles[i]);
-      }
-*/

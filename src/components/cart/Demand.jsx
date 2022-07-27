@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Demand(props) {
-  const { Products } = props;
+  const { Products ,Cartid } = props;
   const newstate = [];
 
   Products.forEach((element) => {newstate.push(parseInt(element.count)* parseInt(element.price))});
@@ -21,7 +21,7 @@ function Demand(props) {
       </div>
 
       <div className="buttons">
-        <NavLink to={`/confirm`} className="btn">
+        <NavLink to={`/confirm/${Cartid}`} className="btn">
           إتمام الشراء
         </NavLink>
       </div>

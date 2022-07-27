@@ -1,9 +1,9 @@
 import React from "react";
 import Visaimg from "../../images/icon/vise-payment.svg";
-import Carddetails from "./Carddetails";
+//import Carddetails from "./Carddetails";
 
 function Paymentform(props) {
-    const { handleCash , isCash , ActiveCash , ActiveCVisa ,handleVisa,isVisa}=props;
+    const { handleCash , isCash , ActiveCash , ActiveCVisa ,handleVisa,isVisa ,Id}=props;
   return (
     <section className="paymentpage__form">
       <h3>طريقة الدفع</h3>
@@ -45,8 +45,9 @@ function Paymentform(props) {
             <span className="text">الدفع عن طريق بطاقه الائتمان</span>
           </label>
         </div>
-
+{/*
         {isVisa ? <Carddetails/> :" " }
+ */}
         
       </div>
     </section>

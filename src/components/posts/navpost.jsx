@@ -17,7 +17,11 @@ function Navpost() {
 
   return (
     <>
+    {localStorage.getItem("token") === null ?
+      <span>أنشر إعلانك</span>
+                : 
       <button className="btn" onClick={()=> Showmodule()}>أنشر إعلانك</button>
+                }
       <Modelpost vispiltymodule={vispiltymodule} Hidemodule={Hidemodule}/>
     </>
   );

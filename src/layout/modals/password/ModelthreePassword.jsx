@@ -77,7 +77,7 @@ function ModelthreePassword(props) {
           تعيين كلمة مرور جديده
           </h5>
           <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
                 ادخل كلمة المرور الجديده
@@ -99,7 +99,7 @@ function ModelthreePassword(props) {
               </div>
               <span className="errorfiled">{message}</span>
 
-              <button type="submit"
+              <button  type="button" onClick={handleSubmit}
                 className={toggole ===false?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}>
                 حفظ
                </button>

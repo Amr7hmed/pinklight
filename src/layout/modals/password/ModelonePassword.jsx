@@ -71,7 +71,7 @@ function ModelonePassword() {
             نسيت كلمة المرور
           </h5>
           <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form >
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف/ البريد الإلكترونى
@@ -87,7 +87,7 @@ function ModelonePassword() {
                 <button
                 className={state.email === "" ?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
                 data-bs-target={toggole === false?" ":"#exampleModalToggle3"}
-              data-bs-toggle="modal" type="submit">المتابعه</button>
+              data-bs-toggle="modal" type="button" onClick={handleSubmit}>المتابعه</button>
               </div>
             </form>
           </div>

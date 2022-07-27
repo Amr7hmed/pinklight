@@ -128,7 +128,7 @@ function Modelone() {
             لا تملك حساب ؟
             <a
               className="btn"
-              data-bs-target="#exampleModalToggle2"
+              data-bs-target="#singupModal"
               data-bs-toggle="modal"
               href="#singupModal"
             >

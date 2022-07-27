@@ -5,15 +5,17 @@ import Iconleft from "../../images/icon/chevron-left-solid.svg";
 import Paymentform from '../../components/checkout/Paymentform';
 import axios from 'axios';
 import { Api } from '../../api';
+import { useParams } from "react-router-dom";
 
 function Payment() {
+  const {id}=useParams();
   const Price = 76,
   Shipping = 10;
 
   const handleSubmit = (data) => {
     const options = {
       method: "post",
-      url: `${Api}order/payment/1`,
+      url: `${Api}order/payment/${id}`,
       headers: {
         Accept: "application/json",
         'Content-Type': 'application/json',
@@ -25,7 +27,7 @@ function Payment() {
     };
     axios(options).then(function (response) {
       console.log("handle success");
-      console.log(response.messge)
+      console.log(response.messge);
     })
     .catch(function (error) {
       if (error.response) {
@@ -73,20 +75,23 @@ function Payment() {
 
       <img src={Iconleft} alt="" />
 
-      <NavLink to={`/confirm`} className="active">تأكيد الطلب</NavLink>
+      <NavLink to={`/confirm/${id}`} className="active">تأكيد الطلب</NavLink>
 
       <img src={Iconleft} alt="" />
 
-      <NavLink to={`/payment`} className="active">دفع</NavLink>
+<span>دفع</span>
 
       <img src={Iconleft} alt="" />
 
-      <NavLink to={`/`}>تم الطلب</NavLink>
+
+      <span >تم الطلب</span>
     </section>
 
         <section className="checkoutpage__content">
-          <Paymentform handleCash={handleCash} isCash={isCash} ActiveCash={ActiveCash} ActiveCVisa={ActiveCVisa} handleVisa={handleVisa} isVisa={isVisa}/>
-          <Demand Price={Price} Shipping={Shipping} classbutton={"show"} Active={Active}/>
+          <Paymentform handleCash={handleCash} isCash={isCash} 
+          ActiveCash={ActiveCash} ActiveCVisa={ActiveCVisa} handleVisa={handleVisa} isVisa={isVisa} Id={id}/>
+          <Demand Price={Price} Shipping={Shipping} 
+          classbutton={"show"} Active={Active} Id={id}/>
         </section>
       </div>
     </section>

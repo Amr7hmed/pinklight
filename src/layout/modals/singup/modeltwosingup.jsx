@@ -73,7 +73,7 @@ function ModeltwoSingup() {
           أدخل رمز التحقق
         </h5>
           <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
 
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
@@ -87,10 +87,10 @@ function ModeltwoSingup() {
                   onChange={handleChange}
                   value={state.code || ''}
                 />
-                <button className="btn send" type="submit">أرسال</button>
+                <button className="btn send" type="button" onClick={handleSubmit}>أرسال</button>
               </div>
               <span className="errorfiled">{message}</span>
-                <button 
+                <button  type="button" 
                 className={toggole ===false?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
                 data-bs-target={toggole ===false?" ":"#singupModal3"}
               data-bs-toggle="modal">المتابعه</button>

@@ -92,7 +92,12 @@ function CartCard(props) {
   return (
     <section className="cartpage__card">
       <div className="img">
-        <img src={Image} alt="" />
+        <img src={Image} alt="" 
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg";
+                        }} />
       </div>
       <div className="content">
         <h4>{Title}</h4>

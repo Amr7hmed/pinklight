@@ -72,6 +72,7 @@ export default function Cardfavorite(props) {
   
     
   };
+  
   return (
     <section className="favorite__card">
       <div className="img">

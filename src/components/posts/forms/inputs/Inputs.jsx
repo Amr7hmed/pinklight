@@ -1,22 +1,51 @@
 import React from "react";
 
-export function InputType(props) {
-  const { type, setType } = props;
 
+export function InputType(props) {
+  const { type, setType , Data } = props;
   const handleVlaue = (e) => {
     const value = e.target.value;
     setType(value);
   };
   return (
     <div className="form-group selectbox">
-      <label>اختر الفئه الفرعيه</label>
+      <label>اختر الفئه</label>
       <select className="form-control"
         value={type}
         onChange={handleVlaue} >
-        <option value="noselect">النوع </option>
-        <option value="7">النوع الاول</option>
-        <option value="two">النوع الثاني</option>
-        <option value="three">النوع الثالث</option>
+        <option > </option>
+          {Data.map((item,index) => 
+            <option value={item.id} key={item.id} > {item.name}
+            </option>
+            )}
+      </select>
+    </div>
+
+  );
+}
+
+
+export function InputSubType(props) {
+  const { subtype, setSubType , Data} = props;
+
+  const handleVlaue = (e) => {
+    const value = e.target.value;
+    setSubType(value);
+  };
+  return (
+    <div className="form-group selectbox">
+      <label>اختر الفئه الفرعيه</label>
+      <select className="form-control"
+        value={subtype}
+        onChange={handleVlaue} >
+        <option > </option>
+          {Data.map((item,index) =>< >
+            {item.branches.map(elment =>
+              <option value={elment.id} key={elment.id} > {elment.name}
+              </option>
+              )}
+          </>
+            )}
       </select>
     </div>
 
@@ -181,13 +210,20 @@ export function SalesDetails(props) {
         <div className="form-group">
           <input type="tel" className="form-control" placeholder="رقم الجوال/اختيارى"
             pattern="[0-9]{11}"
-            name="phoneuser"
+            name="display_phone"
             onChange={handleChange} />
         </div>
 
         <div className="form-group">
           <input type="text" className="form-control" placeholder="التوقيع"
-            name="signature"
+            name="display_name"
+            onChange={handleChange} />
+        </div>
+
+        
+        <div className="form-group">
+          <input type="text" className="form-control" placeholder="الرياض"
+            name="display_location"
             onChange={handleChange} />
         </div>
       </div>

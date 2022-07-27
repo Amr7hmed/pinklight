@@ -19,7 +19,7 @@ function ModelSingup() {
     setToggole(false)
   };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("email", JSON.stringify(state.email));
     const options = {
@@ -33,7 +33,7 @@ function ModelSingup() {
       ...state,
       }),
     };
-    await axios(options).then(function (response) {
+     axios(options).then(function (response) {
       console.log("handle success");
       setToggole(true)
     })
@@ -78,7 +78,7 @@ function ModelSingup() {
           إنشاء حساب جديد
           </h5>
           <div className="modal-body">
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="input_form">
                 <label htmlFor="recipient-name" className="col-form-label">
                   رقم الهاتف / البريد الإلكترونى
@@ -91,11 +91,11 @@ function ModelSingup() {
                   onChange={handleChange}
                   value={state.email || ''}
                 />
-                <button className="btn send" type="submit">أرسال</button>
+                <button className="btn send" type="button" onClick={handleSubmit}>أرسال</button>
               </div>
               <span className="errorfiled">{message}</span>
 
-                <button
+                <button type="button" 
                 className={toggole === false?"btn button-login mb-5 button-disabled":"btn button-login mb-5 button-active"}
                 data-bs-target={toggole === false?" ":"#singupModal2"}
               data-bs-toggle="modal">المتابعه</button>

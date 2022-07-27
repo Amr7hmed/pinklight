@@ -102,7 +102,7 @@ function ModelThreeSingup() {
                   البريد الالكترونى
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   
                   name="email"

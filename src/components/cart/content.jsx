@@ -32,6 +32,7 @@ function CartContent() {
     .catch(function (error) {
       console.log("handle error");
       console.log(error.response.data);
+      setLoading(true);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
@@ -59,7 +60,8 @@ function CartContent() {
                Id={item.id}
                setLoading={setLoading}/>
              )}
-             <Demand Products={products}/>
+             <Demand Products={products}
+               Cartid={cartid}/>
            </section>
          )}
   </>

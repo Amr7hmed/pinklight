@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { Api } from "../../api";
 
-function Confirmform() {
+function Confirmform(props) {
+  const {Id}=props;
   const [state, setState] = useState({
     area: "",
     name: "",
@@ -13,7 +13,6 @@ function Confirmform() {
     zip_code: "",
     address: "",
   });
-  const [toggole ,setToggole] = useState(false);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -27,7 +26,7 @@ function Confirmform() {
     e.preventDefault();
     const options = {
       method: "post",
-      url: `${Api}order/address/1`,
+      url: `${Api}order/address/${Id}`,
       headers: {
         Accept: "application/json",
         'Content-Type': 'application/json',
@@ -40,10 +39,9 @@ function Confirmform() {
     axios(options).then(function (response) {
       console.log("handle success");
       console.log(response.message)
-      setToggole(true)
+      window.location.pathname = `/payment/${Id}`;
     })
     .catch(function (error) {
-      setToggole(false)
       if (error.response) {
         console.log(error.response.data);
         console.log(error.response.status);
@@ -134,10 +132,10 @@ function Confirmform() {
           </div>
 
           <div className="buttonsform">
-            <NavLink to={toggole === false ? `/payment` : null }
+            <button 
                 className="btn" type="submit">
               حفظ
-            </NavLink>
+            </button>
           </div>
         </form>
       </div>

@@ -1,9 +1,11 @@
 import React from "react";
 import Confirmform from "../../components/checkout/Confirmform";
 import Demand from "../../components/checkout/Demand";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Iconleft from "../../images/icon/chevron-left-solid.svg";
+
 function Confirm() {
+  const {id}=useParams();
   const Price = 76,
     Shipping = 10;
 
@@ -17,21 +19,21 @@ function Confirm() {
 
           <img src={Iconleft} alt="" />
 
-          <NavLink to={`/confirm`} className="active">
+          <span className="active">
             تأكيد الطلب
-          </NavLink>
+          </span>
 
           <img src={Iconleft} alt="" />
 
-          <NavLink to={`/payment`}>دفع</NavLink>
+          <span>دفع</span>
 
           <img src={Iconleft} alt="" />
 
-          <NavLink to={`/`}>تم الطلب</NavLink>
+          <span >تم الطلب</span>
         </section>
 
         <section className="checkoutpage__content">
-          <Confirmform />
+          <Confirmform Id={id}/>
           <Demand Price={Price} Shipping={Shipping} classbutton={"hide"}/>
         </section>
       </div>

@@ -2,16 +2,19 @@ import React from "react";
 import InputImgUpload from "../../../../images/icon/img-upload.svg";
 
 export default function InputImages(props) {
-  const { selectedImages } = props;
+  const { images, setImages } = props;
   
-  const onFileChange = (event) => {
-    // let images = [];
-    // Update the state
-    console.log(event.target.name);
-    selectedImages.push(event.target.value)
-    console.log("images3", selectedImages);
-    
+ 
+
+  const CheckHandler = (e) => {
+    const value = e.target.value;
+    setImages((prev) =>
+      images.includes(value)
+        ? prev.filter((cur) => cur !== value)
+        : [...prev, e.target.value]
+    );
   };
+
   return (
     <div className="form-proudect">
       <h6>تحميل صور المنتج </h6>
@@ -21,35 +24,35 @@ export default function InputImages(props) {
             <span><img src={InputImgUpload} alt="" />
               <input type="file"
                 name="fill_one"
-                onChange={onFileChange} value=""/>
+                onClick={CheckHandler} value=""/>
             </span>
           </div>
           <div className="item">
             <span><img src={InputImgUpload} alt="" />
               <input type="file"
                 name="fill_two"
-                onChange={onFileChange} />
+                onClick={CheckHandler} />
             </span>
           </div>
           <div className="item">
             <span><img src={InputImgUpload} alt="" />
               <input type="file"
                 name="fill_three"
-                onChange={onFileChange} />
+                onClick={CheckHandler} />
             </span>
           </div>
           <div className="item">
             <span><img src={InputImgUpload} alt="" />
               <input type="file"
                 name="fill_four"
-                onChange={onFileChange} />
+                onClick={CheckHandler} />
             </span>
           </div>
           <div className="item">
             <span><img src={InputImgUpload} alt="" />
               <input type="file"
                 name="fill_five"
-                onChange={onFileChange} />
+                onClick={CheckHandler} />
             </span>
           </div>
         </div>
@@ -63,7 +66,7 @@ export default function InputImages(props) {
             <input
               type="file"
               name="fill_cover"
-              onChange={onFileChange} />
+              onClick={CheckHandler} />
           </div>
         </div>
       </div>

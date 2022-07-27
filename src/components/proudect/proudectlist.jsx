@@ -10,7 +10,7 @@ function Proudectlist(props) {
 
         <div className="row">
           {Similarproducts.map( item=>
-            <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="col-sm-6 col-md-6 col-lg-3" key={item.id}>
               <CardProudect Image={item.image} 
               Title={item.title} 
               Price={item.price} Id={item.id}  ClassCard={"proudects__card"}/>

@@ -38,8 +38,8 @@ nav.nav {
         }
 
         .user {
-          width: 25px;
-          height: 25px;
+          width: 30px;
+          height: 30px;
           object-fit: unset;
         }
       }
@@ -65,6 +65,13 @@ nav.nav {
     a {
       color: var(--secondary-one-color);
     }
+    .btn{
+      color: var(--secondary-one-color);
+    }
+    span{
+      
+      color: var(--secondary-one-color);
+    }
   }
   &__logo {
     width: 100%;
@@ -81,6 +88,8 @@ nav.nav {
     direction: rtl;
     text-align: right;
     padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
     input {
       width: calc(100% - 22px);
       height: 30px;
@@ -94,12 +103,16 @@ nav.nav {
         outline: none;
       }
     }
-    svg {
+    .btn{
       width: 22px;
       height: 24px;
-      filter: invert(49%) sepia(11%) saturate(11%) hue-rotate(340deg)
-        brightness(92%) contrast(90%);
-      object-fit: contain;
+      svg {
+        width: 22px;
+        height: 24px;
+        filter: invert(49%) sepia(11%) saturate(11%) hue-rotate(340deg)
+          brightness(92%) contrast(90%);
+        object-fit: contain;
+      }
     }
   }
   &__iconprofile {

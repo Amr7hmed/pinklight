@@ -109,3 +109,26 @@ import { Api } from "./index.js";
       console.log(error.response.data);
     });
   };
+
+  
+  export const FilterSearch = async (datasearch) => {
+    const  options = {
+      method: "get",
+      url: `${Api}products?search=${datasearch}`,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+    };
+    await axios(options).then(function (response) {
+     console.log("handle success");
+     //setPerpage(response.data.products.current_page);
+     console.log(response.data.products.data[0].id);
+    // setProducts(response.data.products.data)
+     window.location.pathname = `/proudect/${response.data.products.data[0].id}`;
+    })
+    .catch(function (error) {
+      console.log("handle error");
+      console.log(error.response.data);
+    });
+  };

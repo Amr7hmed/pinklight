@@ -6,20 +6,18 @@ import dress from "../../images/categories/dress.svg";
 import other from "../../images/categories/other.png";
 
 function PostCategories(props) {
-  const { setShowformdress , setCategoryid} = props;
+  const { setShowformdress } = props;
   const [classshow , setClassshow] = useState("showbuttondrees");
 
   const ShowInputSize = (e) => {
     setShowformdress(true);
     setClassshow("showbuttondrees");
-    setCategoryid(e.target.id);
   };
   const HideInputSize = (e) => {
     const value = e.target.name;
     setShowformdress(false)
     setClassshow(value)
     console.log(value);
-    setCategoryid(e.target.id);
   };
 
   return (

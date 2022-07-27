@@ -1,16 +1,18 @@
 import React from "react";
 
 export default function Inputsize(props) {
-    const { selectedSize } = props;
-    
-    const onFileChange = (event) => {
-      // let images = [];
-      // Update the state
-      console.log(event.target.name);
-      selectedSize.push(event.target.value)
-      console.log("size", selectedSize);
-      
-    };
+    const { setSizes ,sizes } = props;
+   
+  // with add & remove filter
+  const CheckHandler = (e) => {
+    const value = e.target.value;
+    setSizes((prev) =>
+      sizes.includes(value)
+        ? prev.filter((cur) => cur !== value)
+        : [...prev, e.target.value]
+    );
+  };
+
     return (
       <div className="form-group">
         <label> المقاسات المتاحه</label>
@@ -22,7 +24,7 @@ export default function Inputsize(props) {
               id="inlineRadio1"
               name="sizes"
               value="s"
-              onChange={onFileChange} />
+              onClick={CheckHandler} />
             <label className="form-check-label" htmlFor="inlineRadio1">
               S
             </label>
@@ -35,7 +37,7 @@ export default function Inputsize(props) {
               id="inlineRadio2"
               name="sizes"
               value="m"
-              onChange={onFileChange} />
+              onClick={CheckHandler} />
             <label className="form-check-label" htmlFor="inlineRadio2">
               M
             </label>
@@ -48,7 +50,7 @@ export default function Inputsize(props) {
               id="inlineRadio2"
               name="sizes"
               value="l"
-              onChange={onFileChange} />
+              onClick={CheckHandler} />
             <label className="form-check-label" htmlFor="inlineRadio2">
               L
             </label>
@@ -61,7 +63,7 @@ export default function Inputsize(props) {
               id="inlineRadio2"
               name="sizes"
               value="x-l"
-              onChange={onFileChange} />
+              onClick={CheckHandler} />
             <label className="form-check-label" htmlFor="inlineRadio2">
               XL
             </label>
@@ -71,3 +73,66 @@ export default function Inputsize(props) {
   
     );
   }
+
+
+  /*
+import React, { Fragment, useState, useEffect } from "react";
+
+export default function App() {
+  const [sizes, setSizes] = useState([]);
+
+  // const CheckHandler = (e) => {
+  //   setSizes((prev) => [...prev, e.target.value]);
+  // };
+
+  // with add & remove filter
+  const CheckHandler = (e) => {
+    const value = e.target.value;
+    setSizes((prev) =>
+      sizes.includes(value)
+        ? prev.filter((cur) => cur !== value)
+        : [...prev, e.target.value]
+    );
+  };
+
+  useEffect(() => {
+    //Print data each time the checkbox is "checked" or "unchecked"
+    console.log(sizes);
+  }, [sizes]);
+
+  return (
+    <Fragment>
+      <input
+        type="checkbox"
+        id="jane"
+        name="jane"
+        value="jane"
+        onClick={CheckHandler}
+      />
+      <label htmlFor="jane">jane</label>
+      <br />
+
+      <input
+        type="checkbox"
+        id="Mike"
+        name="Mike"
+        value="Mike"
+        onClick={CheckHandler}
+      />
+      <label htmlFor="Mike">Mike</label>
+      <br />
+
+      <input
+        type="checkbox"
+        id="board"
+        name="board"
+        value="board"
+        onClick={CheckHandler}
+      />
+      <label htmlFor="board">board</label>
+      <br />
+    </Fragment>
+  );
+}
+
+  */

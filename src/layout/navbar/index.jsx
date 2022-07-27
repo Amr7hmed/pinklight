@@ -4,10 +4,9 @@ import Heart from "../../images/icon/heart.svg";
 import Shopping from "../../images/icon/shopping.svg";
 import { NavLink } from "react-router-dom";
 import Logo from "../../images/logo/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Navpost from "../../components/posts/navpost";
 import Iconprofile from "./Iconprofile";
+import InputSerarch from "./inputserarch";
 
 function Navbar() {
   return (
@@ -19,26 +18,18 @@ function Navbar() {
                 {localStorage.getItem("token") === null ?<Iconlogin/>: <Iconprofile/>}
 
 
-                {localStorage.getItem("token") === null ?
-                "": 
-                <>
                 <NavLink to="/favorite">
                   <img src={Heart} alt="heart" />
                 </NavLink>
                 <NavLink to="/cart">
                   <img src={Shopping} alt="shopping" />
                 </NavLink>
-                </>}
               </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
-
-              
-            {localStorage.getItem("token") === null ?
-                "": 
                 <div className="navbar__advertisement">
                   <Navpost/>
-                </div>}
+                </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
               <div className="navbar__logo">
@@ -48,10 +39,7 @@ function Navbar() {
               </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
-              <div className="navbar__input">
-                <input type="text" placeholder="عن ماذا تبحث ؟" />
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </div>
+              <InputSerarch/>
             </div>
         </div>
       </div>

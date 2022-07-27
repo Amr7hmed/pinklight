@@ -28,9 +28,9 @@ function App() {
             <Route path="/proudects" element={<Proudects/>} exact/>
             <Route path="/proudect/:id" element={<Proudect/>} exact/>
             <Route path="/cart" element={<Cart/>} exact/>
-            <Route path="/confirm" element={<Confirm/>} exact/>
-            <Route path="/payment" element={<Payment/>} exact/>
-            <Route path="/orderdone" element={<Orderdone/>} exact/>
+            <Route path="/confirm/:id" element={<Confirm/>} exact/>
+            <Route path="/payment/:id" element={<Payment/>} exact/>
+            <Route path="/orderdone/:id" element={<Orderdone/>} exact/>
             <Route path="/post" element={<Posts/>} exact/>
             <Route path="/myporfile" element={<Porfile/>} exact/>
             <Route path="/myorders" element={<Myorders/>} exact/>

@@ -29,6 +29,7 @@ function Favorite() {
     .catch(function (error) {
       console.log("handle error");
       console.log(error.response.data);
+      setLoading(true);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading,products]);

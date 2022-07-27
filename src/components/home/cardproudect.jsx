@@ -106,21 +106,36 @@ const addToFavourite = () => {
       <div className={ClassCard} >
         <div className="img">
           <NavLink to={`/proudect/${Id}`} onClick={scrollToTop}>
-          <img src={Image} alt="Proudect" />
+          <img src={Image} alt="Proudect"  
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg";
+                        }} />
           </NavLink>
           
+          <div className="card_hover">
             {localStorage.getItem("token") === null ?
-                "": 
-                <div className="card_hover">
+                <>
+                  <button className="btn btn-heart">
+                    <img src={HeartIcon} alt="" />
+                  </button>
+                  <button className="btn btn-shopping" onClick={() => addToCart()}>
+                    <img src={ShoppinIcon} alt="" />
+                  </button>
+                </> 
+                :
+                <>
                   <button className="btn btn-heart" onClick={()=>addToFavourite()}>
                     <img src={HeartIcon} alt="" />
                   </button>
                   <button className="btn btn-shopping" onClick={() => addToCart()}>
                     <img src={ShoppinIcon} alt="" />
                   </button>
+                </> 
+                }
                 </div>
                 
-                }
         </div>
 
         <div className="content">

@@ -152,14 +152,30 @@ const addToFavourite = () => {
       </div>
 
       <div className="cart">
-        <button className="btn buttoncart" onClick={() => addToCart()}>
-          <img src={cartimg} alt="Cart Icon" />
-          <span>إضافه الى عربة التسوق</span>
-        </button>
-
-        <button className="btn buttonfaveort" onClick={()=>addToFavourite()}>
-          <img src={likeimg} alt="Faveort Icon" />
-        </button>
+        
+            {localStorage.getItem("token") === null ?
+                <>
+                <button className="btn buttoncart">
+                  <img src={cartimg} alt="Cart Icon" />
+                  <span>إضافه الى عربة التسوق</span>
+                </button>
+        
+                <button className="btn buttonfaveort">
+                  <img src={likeimg} alt="Faveort Icon" />
+                </button>
+                </>
+                :<>
+                <button className="btn buttoncart" onClick={() => addToCart()}>
+                  <img src={cartimg} alt="Cart Icon" />
+                  <span>إضافه الى عربة التسوق</span>
+                </button>
+        
+                <button className="btn buttonfaveort" onClick={()=>addToFavourite()}>
+                  <img src={likeimg} alt="Faveort Icon" />
+                </button>
+                
+                </>
+                }
       </div>
     </section>
   );
