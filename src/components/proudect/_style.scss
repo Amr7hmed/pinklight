@@ -88,7 +88,6 @@
           font-size: 12px;
           text-align: center;
           color: #333;
-          display: none;
         }
 
         img {
@@ -99,11 +98,6 @@
           margin-bottom: 12px;
         }
 
-        &:hover {
-          .share_content {
-            display: block;
-          }
-        }
       }
     }
 
@@ -188,6 +182,7 @@
             height: 45px;
             object-fit: unset;
             margin-left: 10px;
+            border-radius: 50%;
           }
 
           span {
@@ -332,6 +327,67 @@
   }
 }
 
+.proudect{
+  &__massages {
+    font-family: var(--font-cairo);
+    direction: rtl;
+
+
+
+    .modal-body {
+      margin: 10px auto 30px auto !important;
+  }
+    .massages__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .user {
+        display: inline-block;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 50px;
+
+        img {
+          width: 31px;
+          height: 31px;
+          margin-left: 8px;
+          object-fit: unset;
+          border-radius: 50%;
+        }
+
+        span {
+          color: var(--secondary-three-color);
+          font-size: 16px;
+        }
+      }
+
+      .send {
+        width: 100%;
+        height: 45px;
+        position: relative;
+
+        input {
+          width: 100%;
+          height: 100%;
+          padding: 10px 32px 10px 32px;
+          border-radius: 15px;
+          border: solid 1px #d9d9d9;
+        }
+
+        .btn {
+          position: absolute;
+          top: 0px;
+          left: 5px;
+          z-index: 1;
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+
+}
 // 1- 1- Style Navbar Component To Media Queris Large.
 @media screen and (max-width: 991px) {
   .proudect {

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Proudectdetals from "../../components/proudect/Proudectdetals";
 import Proudectlist from "../../components/proudect/proudectlist";
-import {useParams} from 'react-router-dom';
+import {useLocation, useParams} from 'react-router-dom';
 import axios from "axios";
 import { Api } from "../../api/index.js";
 import Loading from "../../layout/loading/loading";
@@ -26,7 +26,7 @@ function Proudect(props) {
     await axios(options).then(function (response) {
       setLoading(true);
      console.log("handle success");
-     console.log(response.data);
+     console.log(response);
      setProduct(response.data.product)
      setSimilarproducts(response.data.similarproducts)
     })

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://pink.hwzn.sa",
+  "homepage": "https://Amr7hmed.github.io/pinklight/",
   "name": "pinklight",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +19,7 @@
     "gh-pages": "^4.0.0",
     "multi-range-slider-react": "^1.0.7",
     "react": "^18.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-input-multiline": "^0.3.1",

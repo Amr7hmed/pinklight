@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Api } from "../../api/index.js";
 import Senmassge from "../../images/icon/send-icon-massge.svg";
+import Loading from "../../layout/loading/loading.jsx";
 
 function MassagesContent(props) {
   const { Imguser, Title } = props;
@@ -22,8 +24,8 @@ function MassagesContent(props) {
     axios(options).then(function (response) {
       setLoading(true);
       console.log("handle success");
-      console.log(response.data.messges);
-      setData(response.data.messges)
+      console.log(response.data.messges[0]);
+      setData(response.data.messges[0])
     })
       .catch(function (error) {
         console.log("handle error");
@@ -43,13 +45,14 @@ function MassagesContent(props) {
         Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data : JSON.stringify({
-        "to_user": 7,
-        "message": {valuemassge}
+        "to_user": Data.resever.id,
+        "message": valuemassge
       }),
     };
     axios(options).then(function (response) {
       console.log("handle success");
       console.log(response)
+      setValuemassge("")
     })
       .catch(function (error) {
         if (error.response) {
@@ -66,30 +69,44 @@ function MassagesContent(props) {
   };
 
   return (
-    <div className="massages__content">
-      <div>
-        <span className="user">
-          <img src={Imguser} alt="Imguser" />
-          <span>{Title}</span>
-        </span>
+    <>
 
-        <div className="chat">
-          <div className="system">
-            <span>هل سعر الفستان قابل للتفاوض؟</span>
+        {loading === false ? (
+          <Loading/>
+        ) : (
+          <div className="massages__content">
+            <div>
+              <span className="user">
+                <img src={Data.resever.image} 
+                              onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src =
+                                  "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg";
+                              }} />
+                <span>{Data.resever.name}</span>
+              </span>
+      
+              <div className="chat">
+                <div className="system">
+                  <span>{Data.message}</span>
+                </div>
+                <div className="user">
+                  <span>نعم قابل للتفاوض</span>
+                </div>
+              </div>
+            </div>
+      
+            <div className="send">
+              <input type="text" id="textmassge" value={valuemassge} onChange={(e)=>setValuemassge(e.target.value)}/>
+              <button className="btn" onClick={()=>sendmessage()}>
+                <img src={Senmassge} alt="" />
+              </button>
+            </div>
           </div>
-          <div className="user">
-            <span>نعم قابل للتفاوض</span>
-          </div>
-        </div>
-      </div>
 
-      <div className="send">
-        <input type="text" id="textmassge" value={valuemassge} onChange={(e)=>setValuemassge(e.target.value)}/>
-        <button className="btn" onClick={()=>sendmessage()}>
-          <img src={Senmassge} alt="" />
-        </button>
-      </div>
-    </div>
+        )}
+      
+  </>
   );
 }
 
